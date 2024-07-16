@@ -22,11 +22,12 @@ function App() {
         <div className="w-full flex justify-end">
           {/* Home , Customer , Service , Contact */}
           <div className="flex flex-row space-x-10 mr-5">
-            <p className="cursor-pointer whitespace-nowrap">หน้าหลัก</p>
-            <p className="cursor-pointer whitespace-nowrap">ลูกค้าของเรา</p>
-            <p className="cursor-pointer whitespace-nowrap">บริการของเรา</p>
-            <p className="cursor-pointer whitespace-nowrap">ติดต่อเรา</p>
+            <button className="cursor-pointer whitespace-nowrap">หน้าหลัก</button>
+            <button className="cursor-pointer whitespace-nowrap">ลูกค้าของเรา</button>
+            <button className="cursor-pointer whitespace-nowrap">บริการของเรา</button>
+            <button className="cursor-pointer whitespace-nowrap">ติดต่อเรา</button>
           </div>
+          {/* Localize Container */}
           <div className="flex flex-row space-x-2 ml-4 mr-16 items-center select-none cursor-pointer">
             {/* Flag */}
             <div className="flex h-full w-fit items-center">
@@ -58,7 +59,7 @@ function App() {
         </div>
       </div>
       {/* body */}
-      <div className="flex w-full h-full">
+      <div className="flex min-w-full h-fit flex-col" >
         {/* Carousel */}
         <div className="flex relative min-w-full w-full h-fit min-h-[450px] overflow-hidden">
           <img
@@ -71,6 +72,13 @@ function App() {
             alt="standingGirl"
             className="absolute -right-9 sm:right-0 lg:right-[20%] -bottom-11 sm:bottom-6 scale-75 sm:scale-110 sm:h-5/6 object-cover"
           />
+        </div>
+        {/* Sponsor */}
+        <div className="flex flex-col items-center justify-center">
+           {/* Our Sponsor Text */}
+           <div className="flex">
+              ที่ปรึกษาที่รู้ใจ
+           </div>
         </div>
       </div>
     </div>
