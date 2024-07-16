@@ -76,9 +76,9 @@ function App() {
         {/* Sponsor */}
         <div className="flex flex-col items-center justify-center">
            {/* Our Sponsor Text */}
-           <div className="flex">
+           <p className="flex text-primary-500  mt-20 text-4xl font-semibold">
               ที่ปรึกษาที่รู้ใจ
-           </div>
+           </p>
         </div>
       </div>
     </div>
