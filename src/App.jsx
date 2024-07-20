@@ -1,16 +1,16 @@
 import "./App.css";
-import navlogo from "./image/AccsLogo.png";
-import thailogo from "./image/ThaiLogo.png";
-import carouselBG from "./image/CarouselBG.png";
-import carouselPropOne from "./image/CarouselPropOne.png";
-import accsonlylogo from "./image/AccsOnlyLogo.png";
-import accsonlytext from "./image/AccsOnlyText.png";
-import linelogo from "./image/LineLogo.png";
-import grlogo from "./image/GRLogo.png";
+import navlogo from "../public/image/AccsLogo.png";
+import thailogo from "../public/image/ThaiLogo.png";
+import carouselBG from "../public/image/CarouselBG.png";
+import carouselPropOne from "../public/image/CarouselPropOne.png";
+import accsonlylogo from "../public/image/AccsOnlyLogo.png";
+import accsonlytext from "../public/image/AccsOnlyText.png";
+import linelogo from "../public/image/LineLogo.png";
+import grlogo from "../public/image/GRLogo.png";
 
 function App() {
   return (
-    <div className="flex w-full h-full flex-col relative">
+    <div className="flex w-full h-full flex-col  ">
       {/* Navigation Bar */}
       <div className="flex flex-row justify-between items-center w-full h-[79px] bg-white drop-shadow-lg text-base overflow-hidden z-50">
         {/* Logo */}
@@ -72,7 +72,7 @@ function App() {
         </div>
       </div>
       {/* body */}
-      <div className="flex min-w-full h-fit flex-col">
+      <div className="flex min-w-full h-fit flex-col ">
         {/* Carousel */}
         <div className="flex relative min-w-full w-full h-fit min-h-[450px] overflow-hidden">
           <img
@@ -87,7 +87,7 @@ function App() {
           />
         </div>
         {/* Sponsor */}
-        <div className="flex flex-col items-center justify-center bg-white h-[500px]">
+        <div className="flex flex-col items-center justify-center bg-white h-[500px] w-full">
           {/* Our Sponsor Head Text */}
           <p className="flex text-primary-500 text-[40px] font-semibold mb-4">
             ที่ปรึกษาที่รู้ใจ
@@ -110,6 +110,22 @@ function App() {
               อีกทั้งยังเป็นผู้ช่วยที่ช่วยดูแลธุรกิจของยีราฟอีกด้วย
             </p>
           </div>
+        </div>
+        {/* Service */}
+        <div className="flex flex-col h-[550px] w-full items-center justify-center relative ">
+          <div className="min-w-full bg-cover min-h-full bg-[url(./image/OurServiceBG.png)] bg-opacity-70 flex flex-col justify-center items-center">
+            <div className="flex text-primary-500 text-[40px] font-semibold mb-4 z-10">
+              บริการของเรา
+            </div>
+            <div className="flex flex-row space-x-12">
+              <div className="flex w-[230px] h-[250px] bg-white">1</div>
+              <div className="flex w-[230px] h-[250px] bg-white">2</div>
+              <div className="flex w-[230px] h-[250px] bg-white">3</div>
+              <div className="flex w-[230px] h-[250px] bg-white">4</div>
+            </div>
+            <div className="gray-overlay absolute inset-10 bg-[#E5E5E5]/75 opacity-50" />
+          </div>
+          {/* Service Head Text */}
         </div>
       </div>
       {/* footer */}
@@ -145,7 +161,7 @@ function App() {
           </p>
         </div>
         {/* line floating button */}
-        <button className="fixed bottom-3 right-3 z-50 flex justify-end bg-[#F8F8F8] p-2 rounded-xl h-fit w-fit select-none">
+        <button className="fixed bottom-3 right-3 z-50 flex justify-end bg-[#F8F8F8]/95 p-2 rounded-xl h-fit w-fit select-none">
           <div className="flex w-[45px] h-[45px] items-center justify-center flex-row object-cover">
             <img
               src={linelogo}
