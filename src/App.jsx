@@ -112,18 +112,50 @@ function App() {
           </div>
         </div>
         {/* Service */}
-        <div className="flex flex-col h-[550px] w-full items-center justify-center relative ">
+        <div className="flex flex-col h-[600px] w-full items-center justify-center relative ">
           <div className="min-w-full bg-cover min-h-full bg-[url(./image/OurServiceBG.png)] bg-opacity-70 flex flex-col justify-center items-center">
-            <div className="flex text-primary-500 text-[40px] font-semibold mb-4 z-10">
+            <div className="flex text-primary-500 text-[40px] font-semibold mb-10 z-10">
               บริการของเรา
             </div>
-            <div className="flex flex-row space-x-12">
-              <div className="flex w-[230px] h-[250px] bg-white">1</div>
-              <div className="flex w-[230px] h-[250px] bg-white">2</div>
-              <div className="flex w-[230px] h-[250px] bg-white">3</div>
-              <div className="flex w-[230px] h-[250px] bg-white">4</div>
+            <div className="flex flex-row space-x-12 mb-10">
+              {/* Service 1 */}
+              <div className="flex w-[230px] h-[250px] bg-white flex-col z-10">
+                {/* image 1 */}
+                <img src="../image/FirstServiceLogo.png" alt="firstservice" />
+                {/* text 1 */}
+                <p className="flex text-center font-normal text-primary-500 text-[16px] justify-center items-center w-full h-full break-words">
+                  รับทำบัญชีรายเดือนและยื่นภาษี
+                </p>
+              </div>
+              {/* Service 2 */}
+              <div className="flex w-[230px] h-[250px] bg-white flex-col z-10">
+                {/* image 2 */}
+                <img src="../image/SecondServiceLogo.png" alt="secondservice" />
+                {/* text 2 */}
+                <p className="flex text-center font-normal text-primary-500 text-[16px] justify-center items-center w-full h-full break-words">
+                  บริการตรวจสอบ รับรองบัญชี
+                </p>
+              </div>
+              {/* Service 3 */}
+              <div className="flex w-[230px] h-[250px] bg-white flex-col z-10">
+                {/* image 3 */}
+                <img src="../image/ThirdServiceLogo.png" alt="thirdservice" />
+                {/* text 3 */}
+                <p className="flex font-normal text-primary-500 text-[16px] justify-center items-center w-full h-full break-word text-center">
+                  จดทะเบียนบริษัทจำกัด <br /> / ห้างหุ้นส่วนฯ
+                </p>
+              </div>
+              {/* Service 4 */}
+              <div className="flex w-[230px] h-[250px] bg-white flex-col z-10">
+                {/* image 4 */}
+                <img src="../image/FourthServiceLogo.png" alt="fourthservice" />
+                {/* text 4 */}
+                <p className="flex text-center font-normal text-primary-500 text-[16px] justify-center items-center w-full h-full break-words">
+                  บริการที่ปรึกษาและวางแผนภาษี
+                </p>
+              </div>
             </div>
-            <div className="gray-overlay absolute inset-10 bg-[#E5E5E5]/75 opacity-50" />
+            <div className="gray-overlay absolute inset-10 bg-[#EFEFEF]/90 opacity-50" />
           </div>
           {/* Service Head Text */}
         </div>
