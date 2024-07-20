@@ -6,7 +6,6 @@ import carouselPropOne from "./image/CarouselPropOne.png";
 
 function App() {
   return (
-    // Home Page
     <div className="flex w-full h-full flex-col">
       {/* Navigation Bar */}
       <div className="flex flex-row justify-between items-center w-full h-[79px] bg-white drop-shadow-lg text-base overflow-hidden z-50">
@@ -79,6 +78,17 @@ function App() {
            <p className="flex text-primary-500  mt-20 text-4xl font-semibold">
               ที่ปรึกษาที่รู้ใจ
            </p>
+        </div>
+      </div>
+      {/* footer */}
+      <div className="flex relative min-h-[550px] bg-red-200">
+        {/* footer contents */}
+        <div>
+
+        </div>
+        {/* licence */}
+        <div className="flex w-full rgb">
+
         </div>
       </div>
     </div>
