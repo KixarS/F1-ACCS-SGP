@@ -10,7 +10,7 @@ import grlogo from "/image/GRLogo.png";
 
 function App() {
   return (
-    <div className="relative flex w-full h-full flex-col">
+    <div className="relative flex w-full h-full flex-col mx-auto">
       {/* Navigation Bar */}
       <div className="sticky top-0 flex flex-row justify-between items-center w-full h-[79px] bg-white drop-shadow-lg text-base overflow-hidden z-50">
         {/* Logo */}
@@ -189,12 +189,33 @@ function App() {
               ยินดีที่จะให้บริการแก่คุณลูกค้าอย่างเต็มที่ <br />
               หากท่าน
               <span className="text-primary-500 font-medium text-[22px] mr-2">
-                มีข้อสงสัยหรือมีความต้องการ 
+                มีข้อสงสัยหรือมีความต้องการ
               </span>
               เรายินดีรับฟังและหารือเกี่ยวกับบริการ
               <br />
               ด้านบัญชี ภาษี และพร้อมที่จะเป็นที่ปรึกษาธุรกิจแก่คุณ
             </p>
+          </div>
+          {/* InformationTab & Form */}
+          <div className="flex flex-row w-full h-full bg-red-200 mt-14">
+            {/* Informations */}
+            <div className="flex flex-col items-start bg-blue-200 ml-20 w-full h-full">
+              {/* location */}
+              <div className="flex flex-row bg-white w-[40%] rounded-r-full h-[165px]">
+                {/* Google Map Icon */}
+                <div className="flex w-fit h-fit">
+                  
+                </div>
+                {/* Company Location */}
+                <div>
+
+                </div>
+              </div>
+              {/* Email */}
+              <div></div>
+              {/* Social Media */}
+              <div></div>
+            </div>
           </div>
           <div className="gray-overlay absolute inset-20 -top-20 h-full bg-[#FFFFFF]/90 opacity-50 z-0" />
         </div>
