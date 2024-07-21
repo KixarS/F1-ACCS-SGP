@@ -6,13 +6,14 @@ import carouselPropOne from "/image/CarouselPropOne.png";
 import accsonlylogo from "/image/AccsOnlyLogo.png";
 import accsonlytext from "/image/AccsOnlyText.png";
 import linelogo from "/image/LineLogo.png";
-import grlogo from "/image/GRLogo.png";
+import GRLogo from "/image/GRLogo.png";
+import googleMapIcon from "/image/GoogleMapIcon.png";
 
 function App() {
   return (
-    <div className="relative flex w-full h-full flex-col mx-auto">
+    <div className="flex w-full min-h-screen h-fit flex-col relative">
       {/* Navigation Bar */}
-      <div className="sticky top-0 flex flex-row justify-between items-center w-full h-[79px] bg-white drop-shadow-lg text-base overflow-hidden z-50">
+      <div className="flex flex-row sticky top-0 justify-between items-center w-full h-[79px] bg-white drop-shadow-lg text-base z-50">
         {/* Logo */}
         <div className="flex w-fit h-full flex-row items-center ml-5 lg:ml-24 mt-2">
           <img
@@ -22,7 +23,7 @@ function App() {
           />
         </div>
         {/* Navbar Content */}
-        <div className="w-full flex justify-end">
+        <div className="w-full hidden lg:flex justify-end mr-10">
           {/* Home , Customer , Service , Contact */}
           <div className="flex flex-row space-x-10 mr-5 text-[18px]">
             <button className="cursor-pointer whitespace-nowrap">
@@ -38,9 +39,8 @@ function App() {
               ติดต่อเรา
             </button>
           </div>
-          {/* Localize Container */}
-          <div className="flex flex-row space-x-2 ml-4 mr-16 items-center select-none cursor-pointer">
-            {/* Flag */}
+
+          {/* <div className="flex flex-row space-x-2 ml-4 mr-16 items-center select-none cursor-pointer">
             <div className="flex h-full w-fit items-center">
               <img
                 src={thailogo}
@@ -48,11 +48,9 @@ function App() {
                 className="flex min-w-[20px] max-w-[20px] min-h-[20px] max-h-[20px] rounded-full object-cover"
               />
             </div>
-            {/* Language */}
             <p className="whitespace-nowrap cursor-pointer text-[18px] ">
               ภาษาไทย
             </p>
-            {/* Dropdown Icon */}
             <div>
               <svg
                 width="10"
@@ -68,13 +66,13 @@ function App() {
                 />
               </svg>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
       {/* body */}
-      <div className="flex min-w-full h-fit flex-col ">
+      <div className="flex w-full h-fit flex-col">
         {/* Carousel */}
-        <div className="flex relative min-w-full w-full h-fit min-h-[450px] overflow-hidden">
+        <div className="flex relative w-full h-fit min-h-[450px] overflow-hidden mx-auto">
           <img
             src={carouselBG}
             alt="carouselbg"
@@ -87,72 +85,72 @@ function App() {
           />
         </div>
         {/* Sponsor */}
-        <div className="flex flex-col items-center justify-center bg-white h-[500px] w-full pb-3">
+        <div className="flex flex-col items-center justify-center bg-white h-[500px] w-full pb-3 mx-auto">
           {/* Our Sponsor Head Text */}
-          <p className="flex text-primary-500 text-[40px] font-semibold mb-4 select-none">
+          <p className="flex text-primary-500 text-[25px] lg:text-[40px] font-semibold mb-4 select-none">
             ที่ปรึกษาที่รู้ใจ
           </p>
           {/* Our Sponsor Logo */}
           <img
-            src={grlogo}
+            src={GRLogo}
             alt="gr-sponsor"
             className="object-cover min-h-[175px] min-w-[175px] max-h-[175px] max-w-[175px] mt-3 cursor-pointer"
           />
           {/* Our Sponsor Text */}
           <div className="w-full h-fit flex items-center justify-center flex-col">
-            <p className="font-bold text-secondary-500 text-[32px] whitespace-nowrap my-4 cursor-pointer">
+            <p className="font-bold text-secondary-500 text-[32px] my-4 cursor-pointer">
               ยีราฟพารวย
             </p>
-            <p className="whitespace-nowrap text-[20px] select-none">
-              เป็นที่ปรึกษาด้านบัญชีที่ยีราฟไว้ใจ
+            <p className=" text-[20px] select-none  break-words text-center">
+              เป็น<span className="text-primary-500 font-semibold">ที่ปรึกษาด้านบัญชี</span>ที่ยีราฟไว้ใจ
             </p>
-            <p className="whitespace-nowrap text-[20px] select-none">
+            <p className=" text-[20px] select-none  break-words text-center mx-10">
               อีกทั้งยังเป็นผู้ช่วยที่ช่วยดูแลธุรกิจของยีราฟอีกด้วย
             </p>
           </div>
         </div>
         {/* Service */}
-        <div className="flex flex-col h-[600px] w-full items-center justify-center relative ">
-          <div className="min-w-full bg-cover min-h-full bg-[url(./image/OurServiceBG.png)] bg-opacity-70 flex flex-col justify-center items-center">
+        <div className="flex flex-col min-h-[600px] h-fit lg:min-h-fit lg:h-[600px] w-full items-center justify-center relative mx-auto ">
+          <div className="min-w-full bg-cover min-h-full bg-[url(./image/OurServiceBG.png)] bg-opacity-70 flex flex-col justify-center items-center pt-5 pb-10 lg:pt-0 lg:pb-0">
             {/* Service Text */}
-            <div className="flex text-primary-500 text-[40px] font-semibold mb-10 z-10 select-none">
+            <div className="flex text-primary-500 text-[30px] lg:text-[40px] font-semibold mb-5 lg:mb-10 z-10 select-none">
               บริการของเรา
             </div>
             {/* Service Choices */}
-            <div className="flex flex-row space-x-12 mb-10">
+            <div className="grid grid-cols-2 gap-2 md:gap-5 lg:gap-0 lg:flex lg:flex-row lg:space-x-6 xl:space-x-12 lg:mb-10 items-center justify-center">
               {/* Service 1 */}
-              <div className="flex w-[230px] h-[250px] bg-white flex-col z-10 cursor-pointer">
+              <div className="flex w-[150px] h-[170px] lg:w-[230px] lg:h-[250px] bg-white flex-col z-10 cursor-pointer">
                 {/* image 1 */}
                 <img src="../image/FirstServiceLogo.png" alt="firstservice" />
                 {/* text 1 */}
-                <p className="flex select-none text-center font-normal text-primary-500 text-[20px] justify-center items-center w-full h-full break-words">
+                <p className="flex select-none text-center font-normal text-primary-500 text-[14px] lg:text-[20px] justify-center items-center w-full h-full break-words">
                   รับทำบัญชีรายเดือน <br /> และยื่นภาษี
                 </p>
               </div>
               {/* Service 2 */}
-              <div className="flex w-[230px] h-[250px] bg-white flex-col z-10 cursor-pointer">
+              <div className="flex w-[150px] h-[170px] lg:w-[230px] lg:h-[250px] bg-white flex-col z-10 cursor-pointer">
                 {/* image 2 */}
                 <img src="../image/SecondServiceLogo.png" alt="secondservice" />
                 {/* text 2 */}
-                <p className="flex select-none text-center font-normal text-primary-500 text-[20px] justify-center items-center w-full h-full break-words">
+                <p className="flex select-none text-center font-normal text-primary-500 text-[14px] lg:text-[20px] justify-center items-center w-full h-full break-words">
                   บริการตรวจสอบ <br /> รับรองบัญชี
                 </p>
               </div>
               {/* Service 3 */}
-              <div className="flex w-[230px] h-[250px] bg-white flex-col z-10 cursor-pointer">
+              <div className="flex w-[150px] h-[170px] lg:w-[230px] lg:h-[250px] bg-white flex-col z-10 cursor-pointer">
                 {/* image 3 */}
                 <img src="../image/ThirdServiceLogo.png" alt="thirdservice" />
                 {/* text 3 */}
-                <p className="flex select-none font-normal text-primary-500 text-[20px] justify-center items-center w-full h-full break-word text-center">
+                <p className="flex select-none font-normal text-primary-500 text-[14px] lg:text-[20px] justify-center items-center w-full h-full break-word text-center">
                   จดทะเบียนบริษัทจำกัด <br /> / ห้างหุ้นส่วนฯ
                 </p>
               </div>
               {/* Service 4 */}
-              <div className="flex w-[230px] h-[250px] bg-white flex-col z-10 cursor-pointer">
+              <div className="flex w-[150px] h-[170px] lg:w-[230px] lg:h-[250px] bg-white flex-col z-10 cursor-pointer">
                 {/* image 4 */}
                 <img src="../image/FourthServiceLogo.png" alt="fourthservice" />
                 {/* text 4 */}
-                <p className="flex select-none text-center font-normal text-primary-500 text-[20px] justify-center items-center w-full h-full break-words">
+                <p className="flex select-none text-center font-normal text-primary-500 text-[14px] lg:text-[20px] justify-center items-center w-full h-full break-words">
                   บริการที่ปรึกษา
                   <br />
                   และวางแผนภาษี
@@ -160,23 +158,23 @@ function App() {
               </div>
             </div>
             {/* WhiteCover BG */}
-            <div className="gray-overlay absolute inset-10 bg-[#FFFFFF]/90 opacity-50" />
+            <div className="gray-overlay absolute md:inset-0 xl:inset-10 bg-[#FFFFFF]/90 opacity-50" />
           </div>
         </div>
         {/* Slogan */}
-        <div className="flex flex-col w-full h-[400px] items-center justify-center text-center">
-          <p className="text-secondary-500 text-[32px] font-medium mb-4 select-none">
+        <div className="flex flex-col w-full h-[400px] items-center justify-center text-center mx-auto break-all">
+          <p className="text-secondary-500 text-[25px] lg:text-[32px] font-medium mb-4 select-none">
             หมดกังวลทุกเรื่องบัญชีภาษี
           </p>
-          <p className="font-semibold text-primary-500 text-[32px] mb-6 select-none">
+          <p className="font-semibold text-primary-500 text-[25px] lg:text-[32px] mb-6 select-none">
             เราพร้อมตอบทุกข้อสงสัยและดูแลบัญชีภาษีให้คุณ
           </p>
-          <button className="flex bg-[#88AD9C] text-center text-white text-[26px] px-10 py-4 rounded-sm">
+          <button className="flex bg-[#88AD9C] text-center text-white lg:text-[26px] px-10 py-4 rounded-sm">
             ยินดีให้คำปรึกษา
           </button>
         </div>
         {/* Information & Form */}
-        <div className="relative flex w-full flex-col items-center h-[1060px] bg-[url(./image/FormBG.png)] bg-cover bg-opacity-70 overflow-hidden">
+        <div className="relative flex w-full flex-col items-center h-[1060px] bg-[url(./image/FormBG.png)] bg-cover overflow-hidden mx-auto">
           {/* Send Us Informations Text */}
           <div className="flex w-full text-center h-fit flex-col items-center mt-16 z-10">
             <p className="select-none text-primary-500 text-[40px] font-semibold break-all">
@@ -197,34 +195,28 @@ function App() {
             </p>
           </div>
           {/* InformationTab & Form */}
-          <div className="flex flex-row w-full h-full bg-red-200 mt-14">
+          <div className="flex flex-row w-full h-full mt-14 z-10 mx-auto">
             {/* Informations */}
-            <div className="flex flex-col items-start bg-blue-200 ml-20 w-full h-full">
+            <div className="flex flex-col items-start ml-20 w-full h-full">
               {/* location */}
-              <div className="flex flex-row bg-white w-[40%] rounded-r-full h-[165px]">
+              <div className="flex flex-row bg-white w-[30%] rounded-r-full h-[165px] items-center justify-start opacity-85">
                 {/* Google Map Icon */}
-                <div className="flex w-fit h-fit">
-                  
-                </div>
+                <img
+                  src={googleMapIcon}
+                  alt="map"
+                  className="object-cover min-w-[80px] min-h-[80px] max-w-[80px] max-h-[80px]"
+                />
                 {/* Company Location */}
-                <div>
-
-                </div>
+                <div></div>
               </div>
-              {/* Email */}
-              <div></div>
-              {/* Social Media */}
-              <div></div>
             </div>
           </div>
-          <div className="gray-overlay absolute inset-20 -top-20 h-full bg-[#FFFFFF]/90 opacity-50 z-0" />
+          <div className="gray-overlay absolute inset-20 -top-20 h-full bg-[#FFFFFF]/90 opacity-50 z-0 " />
         </div>
       </div>
       {/* footer */}
-      <div className="flex relative h-[550px] bg-white flex-col ">
-        {/* footer contents */}
+      {/* <div className="flex relative h-[550px] bg-white flex-col ">
         <div className="flex w-full h-full flex-row">
-          {/*accs logo */}
           <div className="flex flex-col items-center w-6/12 justify-center">
             <img
               src={accsonlylogo}
@@ -236,16 +228,13 @@ function App() {
               alt="accs-logo"
               className="cursor-pointer"
             />
-            {/* Slogan */}
             <div className="flex flex-col items-center space-y-1 mt-1 font-medium text-primary-500 text-[20px] select-none">
               <p>สำนักงานบัญชียุคใหม่</p>
               <p>ยินดีให้บริการด้านบัญชีและภาษีครบวงจร</p>
               <p>เราพร้อมจะเป็นที่ปรึกษาให้ธุรกิจของคุณ</p>
             </div>
           </div>
-          {/* main contents */}
           <div className="flex flex-col w-full">
-            {/* navigator buttons */}
             <div className="flex flex-row w-full">
               <button></button>
               <button></button>
@@ -254,13 +243,11 @@ function App() {
             </div>
           </div>
         </div>
-        {/* licence */}
         <div className="flex w-full h-[75px] flex-row justify-center items-center text-white bg-black-500">
           <p className="select-none">
             © 2024 ACCLUSIVE Co., Ltd. All Rights Reserved
           </p>
         </div>
-        {/* line floating button */}
         <button className="fixed bottom-3 right-3 z-50 flex justify-end bg-[#F8F8F8]/95 p-2 rounded-xl h-fit w-fit select-none">
           <div className="flex w-[45px] h-[45px] items-center justify-center flex-row object-cover">
             <img
@@ -270,7 +257,7 @@ function App() {
             />
           </div>
         </button>
-      </div>
+      </div> */}
     </div>
   );
 }
