@@ -9,7 +9,7 @@
         @apply relative hover:text-primary-500 
     }
     .underline-button::after{
-        @apply content-[''] bg-primary-500 h-[4px] w-[0%] left-0 bottom-5 rounded-xl absolute duration-200 font-normal
+        @apply content-[''] bg-primary-500 h-[4px] w-[0%] left-0 bottom-5 rounded-xl absolute duration-300 font-normal
     }
     .underline-button:hover::after{
         @apply w-[100%] font-bold
