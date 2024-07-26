@@ -11,7 +11,7 @@ import googleMapIcon from "/image/GoogleMapIcon.png";
 
 function App() {
   return (
-    <div className="flex w-full min-h-screen h-fit flex-col relative">
+    <div className="flex w-full min-h-screen  h-fit flex-col relative">
       {/* Navigation Bar */}
       <div className="flex flex-row sticky top-0 justify-between items-center w-full h-[79px] bg-white drop-shadow-lg text-base z-50">
         {/* Logo */}
@@ -23,50 +23,22 @@ function App() {
           />
         </div>
         {/* Navbar Content */}
-        <div className="w-full hidden lg:flex justify-end mr-10">
+        <div className="w-full hidden lg:flex justify-end mr-10  h-full items-center">
           {/* Home , Customer , Service , Contact */}
-          <div className="flex flex-row space-x-10 mr-5 text-[18px]">
-            <button className="cursor-pointer whitespace-nowrap">
+          <div className="flex flex-row items-center mr-5 text-[18px] h-full space-x-10 min-w-fit">
+            <button className="flex relative h-full items-center  justify-center underline-button">
               หน้าหลัก
             </button>
-            <button className="cursor-pointer whitespace-nowrap">
+            <button className="flex relative h-full items-center min-w-[75px] justify-center underline-button">
               ลูกค้าของเรา
             </button>
-            <button className="cursor-pointer whitespace-nowrap">
+            <button className="flex relative h-full items-center min-w-[75px] justify-center underline-button">
               บริการของเรา
             </button>
-            <button className="cursor-pointer whitespace-nowrap">
+            <button className="flex relative h-full items-center min-w-[75px] justify-center underline-button">
               ติดต่อเรา
             </button>
           </div>
-
-          {/* <div className="flex flex-row space-x-2 ml-4 mr-16 items-center select-none cursor-pointer">
-            <div className="flex h-full w-fit items-center">
-              <img
-                src={thailogo}
-                alt="thaiFlag"
-                className="flex min-w-[20px] max-w-[20px] min-h-[20px] max-h-[20px] rounded-full object-cover"
-              />
-            </div>
-            <p className="whitespace-nowrap cursor-pointer text-[18px] ">
-              ภาษาไทย
-            </p>
-            <div>
-              <svg
-                width="10"
-                height="10"
-                viewBox="0 0 10 8"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M5 8L0.669871 0.5L9.33013 0.5L5 8Z"
-                  fill="#252525"
-                  fill-opacity="0.75"
-                />
-              </svg>
-            </div>
-          </div> */}
         </div>
       </div>
       {/* body */}
@@ -85,7 +57,7 @@ function App() {
           />
         </div>
         {/* Sponsor */}
-        <div className="flex flex-col items-center justify-center bg-white h-[500px] w-full pb-3 mx-auto">
+        <div className="flex flex-col items-center pt-10 md:pt-0 justify-center bg-white h-[500px] w-full sm:pb-3 mx-auto">
           {/* Our Sponsor Head Text */}
           <p className="flex text-primary-500 text-[25px] lg:text-[40px] font-semibold mb-4 select-none">
             ที่ปรึกษาที่รู้ใจ
@@ -102,7 +74,11 @@ function App() {
               ยีราฟพารวย
             </p>
             <p className=" text-[20px] select-none  break-words text-center">
-              เป็น<span className="text-primary-500 font-semibold">ที่ปรึกษาด้านบัญชี</span>ที่ยีราฟไว้ใจ
+              เป็น
+              <span className="text-primary-500 font-semibold">
+                ที่ปรึกษาด้านบัญชี
+              </span>
+              ที่ยีราฟไว้ใจ
             </p>
             <p className=" text-[20px] select-none  break-words text-center mx-10">
               อีกทั้งยังเป็นผู้ช่วยที่ช่วยดูแลธุรกิจของยีราฟอีกด้วย
@@ -162,12 +138,14 @@ function App() {
           </div>
         </div>
         {/* Slogan */}
-        <div className="flex flex-col w-full h-[400px] items-center justify-center text-center mx-auto break-all">
-          <p className="text-secondary-500 text-[25px] lg:text-[32px] font-medium mb-4 select-none">
+        <div className="flex flex-col w-full h-[400px] items-center justify-center text-center  md:mx-auto break-words px-5">
+          <p className="text-secondary-500 text-[20px] md:text-[25px] lg:text-[32px] font-medium mb-4 select-none">
             หมดกังวลทุกเรื่องบัญชีภาษี
           </p>
-          <p className="font-semibold text-primary-500 text-[25px] lg:text-[32px] mb-6 select-none">
-            เราพร้อมตอบทุกข้อสงสัยและดูแลบัญชีภาษีให้คุณ
+          <p className="font-semibold text-primary-500 text-[20px] md:text-[25px] lg:text-[32px] mb-6 select-none">
+            เราพร้อมตอบทุกข้อสงสัย
+            <br className="flex md:hidden" />
+            และดูแลบัญชีภาษีให้คุณ
           </p>
           <button className="flex bg-[#88AD9C] text-center text-white lg:text-[26px] px-10 py-4 rounded-sm">
             ยินดีให้คำปรึกษา
