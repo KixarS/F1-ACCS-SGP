@@ -5,37 +5,39 @@
 @tailwind utilities;
 
 @layer utilities {
-    .underline-button {
-        @apply relative hover:text-primary-500 
-    }
-    .underline-button::after{
-        @apply content-[''] bg-primary-500 h-[4px] w-[0%] left-0 bottom-5 rounded-xl absolute duration-300 font-normal
-    }
-    .underline-button:hover::after{
-        @apply w-[100%] font-bold
-    }
+  .underline-button {
+    @apply relative hover:text-primary-500;
+  }
+  .underline-button::after {
+    @apply content-[''] bg-primary-500 h-[4px] w-[0%] left-0 bottom-5 rounded-xl absolute duration-300 font-normal;
+  }
+  .underline-button:hover::after {
+    @apply w-[100%] font-bold;
+  }
+
+  .form-bg {
+    background-image: url(./image/FormBG.png);
+    background-size: cover;
+    filter: brightness(0.8);
+  }
 }
 
 @layer base {
-    *{
-        scroll-behavior: smooth;
-    }
-}
+  * {
+    scroll-behavior: smooth;
+  }
 
-nav a:hover,
-nav a.active {
-    color: #03474B;
 }
 
 ::-webkit-scrollbar {
-    width: 10px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #a5a5a5;
-    border-radius: 10px;
+  background-color: #a5a5a5;
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background-color: #555555;
+  background-color: #555555;
 }
