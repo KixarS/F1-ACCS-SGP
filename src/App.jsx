@@ -8,8 +8,20 @@ import accsonlytext from "/image/AccsOnlyText.png";
 import linelogo from "/image/LineLogo.png";
 import GRLogo from "/image/GRLogo.png";
 import googleMapIcon from "/image/GoogleMapIcon.png";
+import { useEffect, useState } from "react";
+import clsx from "clsx";
 
 function App() {
+  const [HamNavOpen, setHamNavOpen] = useState(false);
+  const HamNavOpenHandle = () => {
+    setHamNavOpen(!HamNavOpen);
+  };
+
+  useEffect(() => {
+    HamNavOpen
+      ? (document.body.style.overflow = "hidden")
+      : (document.body.style.overflow = "auto");
+  }, [HamNavOpen]);
 
   return (
     <div className="flex w-full min-h-screen h-fit flex-col relative ">
@@ -18,12 +30,12 @@ function App() {
         {/* Logo */}
         <a
           href="#"
-          className="flex w-fit h-full flex-row items-center ml-5 lg:ml-24 mt-2"
+          className="flex w-fit h-full flex-row items-center ml-1 lg:ml-24 mt-2"
         >
           <img
             src={navlogo}
             alt="accs-logo"
-            className="flex min-w-[100px] max-w-[100px] min-h-[95px] max-h-[95px] cursor-pointer object-contain"
+            className="flex md:min-w-[100px] md:max-w-[100px] md:min-h-[95px] md:max-h-[95px] min-w-[90px] max-w-[90px] min-h-[85px] max-h-[85px] cursor-pointer object-contain"
           />
         </a>
         {/* Navbar Content */}
@@ -56,9 +68,76 @@ function App() {
             </a>
           </nav>
         </nav>
+        {/* Hamburger Bar */}
+        <button
+          onClick={HamNavOpenHandle}
+          className="flex flex-col lg:hidden w-20 justify-center items-center h-full space-y-[5px] transition-transform "
+        >
+          <div
+            className={clsx(
+              "flex w-7 bg-[#757575] h-[3px] duration-300 rounded-xl",
+              HamNavOpen
+                ? "rotate-45 translate-y-2 "
+                : "rotate-0  translate-y-0"
+            )}
+          />
+          <div
+            className={clsx(
+              "flex w-7 bg-[#757575] h-[3px] rounded-xl",
+              HamNavOpen ? "opacity-0 duration-200" : "opacity-100 duration-500"
+            )}
+          />
+          <div
+            className={clsx(
+              "flex w-7 bg-[#757575] h-[3px] duration-300 rounded-xl",
+              HamNavOpen
+                ? "-rotate-45 -translate-y-2 "
+                : "rotate-0  translate-y-0"
+            )}
+          />
+        </button>
       </header>
       {/* body */}
-      <div className="flex w-full h-fit flex-col">
+      <div className="flex lg:h-fit flex-col overflow-hidden">
+        <div
+          className={clsx(
+            "fixed flex top-[75px] flex-row justify-center lg:hidden left-0 z-40 bg-white w-full",
+            HamNavOpen
+              ? "ml-0 h-screen opacity-100 duration-300 "
+              : "ml-96 opacity-10 h-screen duration-300 "
+          )}
+          onClick={HamNavOpenHandle}
+        >
+          <nav className="flex mt-[79px] flex-col space-y-10 items-start text-[24px] h-full min-w-fit duration-300 font-medium ">
+            <a
+              href="#home"
+              className="flex relative h-fit items-center min-w-fit justify-center duration-300 underline-button "
+            >
+              <div>
+
+              </div>
+              <p>หน้าหลัก</p>
+            </a>
+            <a
+              href="#sponsor"
+              className="flex relative h-fit items-center min-w-fit justify-center duration-300 underline-button"
+            >
+              ลูกค้าของเรา
+            </a>
+            <a
+              href="#service"
+              className="flex relative h-fit items-center min-w-fit justify-center duration-300 underline-button"
+            >
+              บริการของเรา
+            </a>
+            <a
+              href="#contact"
+              className="flex relative h-fit items-center min-w-fit justify-center duration-300 underline-button"
+            >
+              ติดต่อเรา
+            </a>
+          </nav>
+        </div>
         {/* Carousel */}
         <section
           id="home"
@@ -81,7 +160,7 @@ function App() {
           className="flex flex-col items-center pt-10 md:pt-0 justify-center bg-white h-[600px] w-full sm:pb-3 mx-auto"
         >
           {/* Our Sponsor Head Text */}
-          <p className="flex text-primary-500 text-[25px] lg:text-[40px] font-semibold mb-4 select-none">
+          <p className="flex text-primary-500 text-[30px] lg:text-[40px] font-semibold mb-4 select-none">
             ที่ปรึกษาที่รู้ใจ
           </p>
           {/* Our Sponsor Logo */}
@@ -110,9 +189,9 @@ function App() {
         {/* Service */}
         <section
           id="service"
-          className="flex flex-col min-h-[600px] h-fit lg:min-h-fit lg:h-[600px] w-full items-center justify-center relative mx-auto "
+          className="flex flex-col min-h-[400px] h-fit lg:min-h-fit lg:h-[600px] w-full items-center justify-center relative mx-auto "
         >
-          <div className="min-w-full bg-cover min-h-full bg-[url(./image/OurServiceBG.png)] bg-opacity-70 flex flex-col justify-center items-center pt-5 pb-10 lg:pt-0 lg:pb-0">
+          <div className="min-w-full bg-cover min-h-full bg-[url(./image/OurServiceBG.png)] bg-opacity-70 flex flex-col justify-center items-center mt-10 pt-20 pb-28 lg:pt-0 lg:pb-0">
             {/* Service Text */}
             <div className="flex text-primary-500 text-[30px] lg:text-[40px] font-semibold mb-5 lg:mb-10 z-10 select-none">
               บริการของเรา
@@ -165,19 +244,19 @@ function App() {
         {/* Slogan */}
         <section
           id="contact"
-          className="flex flex-col w-full h-[500px] items-center justify-center text-center  md:mx-auto break-words px-5"
+          className="flex flex-col w-full h-[500px] items-center justify-center text-center md:mx-auto break-words px-5"
         >
-          <p className="text-secondary-500 text-[20px] md:text-[25px] lg:text-[32px] font-medium mb-4 select-none">
+          <p className="text-secondary-500 text-[25px] lg:text-[32px] font-medium mb-4 select-none">
             หมดกังวลทุกเรื่องบัญชีภาษี
           </p>
-          <p className="font-semibold text-primary-500 text-[20px] md:text-[25px] lg:text-[32px] mb-6 select-none">
+          <p className="font-semibold text-primary-500 text-[25px] lg:text-[32px] mb-6 select-none">
             เราพร้อมตอบทุกข้อสงสัย
             <br className="flex md:hidden" />
             และดูแลบัญชีภาษีให้คุณ
           </p>
           <a
             href="#form"
-            className="flex bg-[#88AD9C] text-center text-white lg:text-[26px] px-10 py-4 rounded-sm"
+            className="flex bg-[#88AD9C] text-center text-white font-medium text-[21px] lg:text-[28px] px-10 py-4 rounded-sm"
           >
             ยินดีให้คำปรึกษา
           </a>
@@ -187,7 +266,7 @@ function App() {
           id="form"
           className="relative flex w-full flex-col items-center h-[1060px] overflow-hidden mx-auto"
         >
-          <div className="absolute flex w-full h-full bg-[url(./image/FormBG.png)] brightness-90 z-0 bg-cover"/>
+          <div className="absolute flex w-full h-full bg-[url(./image/FormBG.png)] brightness-90 z-0 bg-cover" />
           {/* Send Us Informations Text */}
           <div className="flex w-full text-center h-fit flex-col items-center mt-28 z-20">
             <p className="select-none text-primary-500 text-[40px] font-semibold break-all">

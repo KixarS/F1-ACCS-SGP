@@ -6,10 +6,10 @@
 
 @layer utilities {
   .underline-button {
-    @apply relative hover:text-primary-500;
+    @apply relative hover:text-secondary-700;
   }
   .underline-button::after {
-    @apply content-[''] bg-primary-500 h-[4px] w-[0%] left-0 bottom-5 rounded-xl absolute duration-300 font-normal;
+    @apply content-[''] bg-secondary-500 h-[4px] w-[0%] left-0 bottom-5 rounded-xl absolute duration-300 font-normal;
   }
   .underline-button:hover::after {
     @apply w-[100%] font-bold;
