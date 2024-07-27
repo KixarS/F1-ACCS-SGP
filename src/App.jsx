@@ -26,7 +26,7 @@ function App() {
   return (
     <div className="flex w-full min-h-screen h-fit flex-col relative ">
       {/* Navigation Bar */}
-      <header className="flex flex-row sticky top-0 justify-between items-center w-full h-[79px] bg-white drop-shadow-lg text-base z-50">
+      <header className="flex flex-row sticky top-0 justify-between items-center w-full h-[79px] text-black-300 bg-white drop-shadow-lg text-base z-50">
         {/* Logo */}
         <a
           href="#"
@@ -75,7 +75,7 @@ function App() {
         >
           <div
             className={clsx(
-              "flex w-7 bg-[#757575] h-[3px] duration-300 rounded-xl",
+              "flex w-7 bg-black-300 h-[3px] duration-300 rounded-xl",
               HamNavOpen
                 ? "rotate-45 translate-y-2 "
                 : "rotate-0  translate-y-0"
@@ -83,13 +83,13 @@ function App() {
           />
           <div
             className={clsx(
-              "flex w-7 bg-[#757575] h-[3px] rounded-xl",
+              "flex w-7 bg-black-300 h-[3px] rounded-xl",
               HamNavOpen ? "opacity-0 duration-200" : "opacity-100 duration-500"
             )}
           />
           <div
             className={clsx(
-              "flex w-7 bg-[#757575] h-[3px] duration-300 rounded-xl",
+              "flex w-7 bg-black-300 h-[3px] duration-300 rounded-xl",
               HamNavOpen
                 ? "-rotate-45 -translate-y-2 "
                 : "rotate-0  translate-y-0"
@@ -98,19 +98,18 @@ function App() {
         </button>
       </header>
       {/* body */}
-      <div className="flex lg:h-fit flex-col overflow-hidden">
+      <div className="flex lg:h-full flex-col overflow-hidden">
         {/* Hamburger content */}
         <div
           className={clsx(
-            "fixed flex top-[75px] flex-row justify-center lg:hidden left-0 z-40 bg-white w-full",
+            "fixed flex flex-row justify-center lg:hidden left-0 z-40 bg-white w-full",
             HamNavOpen
               ? "ml-0 h-screen opacity-100 duration-300 "
-              : "ml-96 opacity-10 h-screen duration-300 "
+              : "ml-[420px] opacity-0 h-screen duration-300 "
           )}
           onClick={HamNavOpenHandle}
         >
-          <nav className=" flex mt-[79px] flex-col items-start text-[24px] h-full min-w-fit duration-300 font-medium text-[#75b498]">
-            {/* home */}
+          <nav className=" flex flex-col items-start justify-end text-[24px] max-h-screen space-y-8 h-1/2 min-w-fit duration-300 font-medium text-[#75b498]">
             <a
               href="#home"
               className="flex flex-col relative h-10 items-center min-w-fit justify-center duration-300 lg:underline-button"
@@ -131,8 +130,6 @@ function App() {
                 </p>
               </div>
             </a>
-            <hr className="w-full flex mt-4 mb-3" />
-            {/* partner */}
             <a
               href="#sponsor"
               className="flex relative h-10 items-center min-w-fit justify-center duration-300 lg:underline-button"
@@ -153,7 +150,6 @@ function App() {
                 </div>
               </div>
             </a>
-            <hr className="w-full flex mt-3 mb-3" />
             <a
               href="#service"
               className="flex relative h-fit items-center min-w-fit justify-center duration-300 lg:underline-button"
@@ -162,7 +158,7 @@ function App() {
                 <div className="flex justify-center items-center h-full">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="w-10 h-11"
+                    className="w-10 h-10"
                     viewBox="-5 -5 60 60"
                     fill="#03474B"
                   >
@@ -174,7 +170,6 @@ function App() {
                 </div>
               </div>
             </a>
-            <hr className="w-full flex mt-4 mb-3" />
             <a
               href="#contact"
               className="flex relative h-fit items-center min-w-fit justify-center duration-300 lg:underline-button"
@@ -195,24 +190,126 @@ function App() {
                 </div>
               </div>
             </a>
-            <hr className="w-full flex mt-4 mb-3" />
           </nav>
         </div>
         {/* Carousel */}
         <section
           id="home"
-          className="flex relative w-full h-fit min-h-[450px] overflow-hidden mx-auto"
+          className="flex flex-row justify-start relative w-full min-h-[450px] h-[500px] overflow-hidden mx-auto"
         >
+          {/* Content */}
+          <div className="flex lg:max-w-[750px] xl:max-w-[60%] w-full 2xl h-full items-center z-10 flex-row">
+            <div className="flex flex-row h-full w-fit items-center relative lg:ml-[10%] xl:ml-[25%] 2xl:ml-[400px]">
+              <img
+                src={navlogo}
+                alt="accsonlylogo"
+                className="object-cover lg:min-w-[300px] lg:min-h-[215px] lg:mb-20 lg:max-w-[300px]  lg:max-h-[215px] xl:min-w-[330px] xl:min-h-[260px] xl:max-w-[330px] xl:max-h-[260px]"
+              />
+              {/* Text */}
+              <div className="flex w-full h-full mt-48 flex-col justify-start select-none">
+                <p className="text-primary-500 font-semibold text-[48px] whitespace-nowrap">
+                  บริการด้านบัญชีภาษี <br /> ดูแลธุรกิจครบวงจร
+                </p>
+                <p className="text-black-300 text-[22px] font-medium text-start mt-5 ml-6">
+                  ถ้าหากคุณเป็นผู้ประกอบการที่
+                </p>
+                <div className="flex flex-col ml-10 mt-2 space-y-1">
+                  <div className="flex flex-row space-x-3 items-center">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4.38999 8.9435C3.57665 8.13016 2.25749 8.13016 1.44332 8.9435C0.629154 9.75683 0.629987 11.076 1.44332 11.8902L5.31415 15.761C6.52165 16.9685 8.47832 16.9685 9.68582 15.761L10.4467 15.0002L4.38999 8.9435Z"
+                        fill="#75b498"
+                      />
+                      <path
+                        d="M18.5567 3.9435C17.7433 3.13016 16.4242 3.13016 15.61 3.9435L7.5 12.0535L10.4467 15.0002L18.5567 6.89016C19.37 6.076 19.37 4.75683 18.5567 3.9435Z"
+                        fill="#75b498"
+                      />
+                    </svg>
+                    <p className="text-black-300 text-[20px] text-start">
+                      ใส่ใจเรื่อง
+                      <span className="text-secondary-600">ภาษี</span>และ
+                      <span className="text-secondary-600">ความถูกต้อง</span>
+                    </p>
+                  </div>
+                  <div className="flex flex-row space-x-3 items-center">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4.38999 8.9435C3.57665 8.13016 2.25749 8.13016 1.44332 8.9435C0.629154 9.75683 0.629987 11.076 1.44332 11.8902L5.31415 15.761C6.52165 16.9685 8.47832 16.9685 9.68582 15.761L10.4467 15.0002L4.38999 8.9435Z"
+                        fill="#75b498"
+                      />
+                      <path
+                        d="M18.5567 3.9435C17.7433 3.13016 16.4242 3.13016 15.61 3.9435L7.5 12.0535L10.4467 15.0002L18.5567 6.89016C19.37 6.076 19.37 4.75683 18.5567 3.9435Z"
+                        fill="#75b498"
+                      />
+                    </svg>
+                    <p className="text-black-300 text-[20px] text-start whitespace-nowrap">
+                      ให้ความสำคัญกั
+                      <span className="text-secondary-600">คุณภาพของงาน</span>
+                      มากกว่าราคาที่ถูก
+                    </p>
+                  </div>
+                  <div className="flex flex-row space-x-3 items-center">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4.38999 8.9435C3.57665 8.13016 2.25749 8.13016 1.44332 8.9435C0.629154 9.75683 0.629987 11.076 1.44332 11.8902L5.31415 15.761C6.52165 16.9685 8.47832 16.9685 9.68582 15.761L10.4467 15.0002L4.38999 8.9435Z"
+                        fill="#75b498"
+                      />
+                      <path
+                        d="M18.5567 3.9435C17.7433 3.13016 16.4242 3.13016 15.61 3.9435L7.5 12.0535L10.4467 15.0002L18.5567 6.89016C19.37 6.076 19.37 4.75683 18.5567 3.9435Z"
+                        fill="#75b498"
+                      />
+                    </svg>
+                    <p className="text-black-300 text-[20px] text-start whitespace-nowrap">
+                      อยากได้ที่
+                      <span className="text-secondary-600">
+                        ปรึกษาที่รับฟัง
+                      </span>
+                      และ
+                      <span className="text-secondary-600">
+                        พร้อมช่วยแก้ปัญหา
+                      </span>
+                    </p>
+                  </div>
+                </div>
+                <div className="flex w-full justify-center h-fit mt-5">
+                  <a href="#service" className="flex w-[130px] h-[48px] bg-secondary-500 text-white justify-center items-center rounded-sm">
+                    <p className="font-light text-[16px]">บริการของเรา</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* bg */}
           <img
             src={carouselBG}
             alt="carouselbg"
-            className="object-cover min-w-full"
+            className="object-cover min-w-full min-h-full absolute right-0 bottom-0 brightness-95"
           />
+          {/* woman prop */}
           <img
             src={carouselPropOne}
             alt="standingGirl"
-            className="absolute -right-9 sm:right-0 lg:right-[20%] -bottom-11 sm:bottom-5 scale-75 sm:scale-110 sm:h-5/6 object-cover"
+            className="absolute -right-9 scale-75 -bottom-11 sm:bottom-3 sm:right-0 sm:scale-110 xl:h-5/6 2xl:right-[20%] lg:right-[5%] xl:right[10%] object-cover z-10"
           />
+          <div className="gray-overlay absolute inset-0 h-full bg-[#FFFFFF] opacity-50 z-0 " />
         </section>
         {/* Sponsor */}
         <section
@@ -251,7 +348,7 @@ function App() {
           id="service"
           className="flex flex-col min-h-[400px] h-fit lg:min-h-fit lg:h-[600px] w-full items-center justify-center relative mx-auto "
         >
-          <div className="min-w-full bg-cover min-h-full bg-[url(./image/OurServiceBG.png)] bg-opacity-70 flex flex-col justify-center items-center mt-10 pt-20 pb-28 lg:pt-0 lg:pb-0">
+          <div className="min-w-full bg-cover min-h-full bg-[url(./image/OurServiceBG.png)] bg-opacity-70 flex flex-col justify-center items-center mt-10 lg:mt-0 pt-20 pb-28 lg:pt-0 lg:pb-0">
             {/* Service Text */}
             <div className="flex text-primary-500 text-[30px] lg:text-[40px] font-semibold mb-5 lg:mb-10 z-10 select-none">
               บริการของเรา
