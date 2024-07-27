@@ -22,6 +22,8 @@ import FollowInfomationIcon from "/image/FollowInfomationIcon.png";
 import { useEffect, useState } from "react";
 import clsx from "clsx";
 import SharePopup from "./components/SharePopup";
+import Loading from "./components/Loading";
+import Swal from "sweetalert2";
 
 function App() {
   const [HamNavOpen, setHamNavOpen] = useState(false);
@@ -46,16 +48,57 @@ function App() {
     window.open(gmailUrl, "_blank");
   };
 
+  const [showLoad, setShowLoad] = useState(false);
+
   const formSubmitHandle = (e) => {
     e.preventDefault();
-
     const formData = new FormData(e.target);
-    const values = Object.fromEntries(formData.entries());
-    console.log("Extracted Values:", values);
+    const now = new Date();
+    const datetimeString = now.toLocaleString("th-TH", {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hour12: false,
+    });
+
+    formData.append("Date", datetimeString);
+
+    setShowLoad(true);
+
+    fetch(
+      "https://script.google.com/macros/s/AKfycbyLty2GqtbGv3eTISvxgsp5Xxvn0YaSRmnoCWzH1Kl9fQB4hzOTbWDfdEkjuxvQvfjA/exec",
+      {
+        method: "POST",
+        body: formData,
+      }
+    ).then((res) => {
+      if (res.ok) {
+        setShowLoad(false);
+        Swal.fire({
+          title: "แจ้งเตือน",
+          text: "ส่งฟอร์มสำเร็จ",
+          icon: "success",
+          confirmButtonText: "ตกลง",
+        });
+      } else {
+        Swal.fire({
+          title: "แจ้งเตือน",
+          text: "ส่งฟอร์มไม่สำเร็จ",
+          icon: "error",
+          confirmButtonText: "ตกลง",
+        });
+      }
+    });
   };
 
   return (
     <div className="flex w-full min-h-screen h-fit flex-col relative">
+      {/* Loading */}
+      <Loading show={showLoad} text="กำลังส่งฟอร์ม" />
+
       {/* Navigation Bar */}
       <header className="flex flex-row sticky top-0 justify-between items-center w-full h-[79px] text-black-300 bg-white drop-shadow-lg text-base z-50">
         {/* Logo */}
@@ -614,14 +657,14 @@ function App() {
                     className="p-2 w-full outline outline-1 outline-gray-500 rounded-xl pl-4"
                     required
                     placeholder="ชื่อ *"
-                    name="firstname"
+                    name="Firstname"
                   />
                   <input
                     type="text"
                     className="p-2 w-full outline outline-1 outline-gray-500 rounded-xl pl-4"
                     required
                     placeholder="นามสกุล *"
-                    name="lastname"
+                    name="Lastname"
                   />
                 </div>
                 <input
@@ -629,37 +672,39 @@ function App() {
                   className="p-2 outline outline-1 outline-gray-500 rounded-xl pl-4"
                   required
                   placeholder="เบอร์ติดต่อ *"
-                  name="phone"
+                  name="Phone"
                 />
                 <input
                   type="email"
                   className="p-2 outline outline-1 outline-gray-500 rounded-xl pl-4"
                   required
                   placeholder="อีเมล *"
-                  name="email"
+                  name="Email"
                 />
                 <select
                   className="p-2 outline outline-1 outline-gray-500 rounded-xl pl-4"
-                  name="service"
+                  name="Service"
                   required
                 >
                   <option value={null} disabled>
                     เลือกบริการที่สนใจ *
                   </option>
-                  <option value="option_1">
+                  <option value="รับทำบัญชีรายเดือน และยื่นภาษี">
                     รับทำบัญชีรายเดือน และยื่นภาษี
                   </option>
-                  <option value="option_2">บริการตรวจสอบ รับรองบัญชี</option>
-                  <option value="option_3">
+                  <option value="บริการตรวจสอบ รับรองบัญชี">
+                    บริการตรวจสอบ รับรองบัญชี
+                  </option>
+                  <option value="จดทะเบียนบริษัทจำกัด / ห้างหุ้นส่วนฯ">
                     จดทะเบียนบริษัทจำกัด / ห้างหุ้นส่วนฯ
                   </option>
-                  <option value="option_4">
+                  <option value="บริการที่ปรึกษา และวางแผนภาษี">
                     บริการที่ปรึกษา และวางแผนภาษี
                   </option>
                 </select>
                 <textarea
                   className="p-2 outline outline-1 outline-gray-500 rounded-xl pl-4"
-                  name="detail"
+                  name="Detail"
                   placeholder="รายละเอียด..."
                 ></textarea>
                 <button
