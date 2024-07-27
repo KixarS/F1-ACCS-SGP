@@ -10,9 +10,11 @@ import googleMapIcon from "/image/GoogleMapIcon.png";
 import emailIcon from "/image/EmailIcon.png";
 import facebookIcon from "/image/FacebookLogo.png";
 import lineIcon from "/image/LineIcon.png";
+import XIcon from "/image/XLogo.png";
 import FollowInfomationIcon from "/image/FollowInfomationIcon.png";
 import { useEffect, useState } from "react";
 import clsx from "clsx";
+import SharePopup from "./components/SharePopup";
 
 function App() {
   const [HamNavOpen, setHamNavOpen] = useState(false);
@@ -20,11 +22,30 @@ function App() {
     setHamNavOpen(!HamNavOpen);
   };
 
+  const [sharePopup, setSharePopup] = useState(false);
+
   useEffect(() => {
     HamNavOpen
       ? (document.body.style.overflow = "hidden")
       : (document.body.style.overflow = "auto");
   }, [HamNavOpen]);
+
+  const handleEmailClick = () => {
+    const email = "Info.acclusive@gmail.com"; // Replace with the desired email address
+    const subject = "Your Subject Here";
+    const body = "Your email body here.";
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${body}`;
+
+    window.open(gmailUrl, "_blank");
+  };
+
+  const formSubmitHandle = (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+    const values = Object.fromEntries(formData.entries());
+    console.log("Extracted Values:", values);
+  };
 
   return (
     <div className="flex w-full min-h-screen h-fit flex-col relative">
@@ -370,7 +391,7 @@ function App() {
             {/* Service Choices */}
             <div className="grid grid-cols-2 gap-2 md:gap-5 lg:gap-0 lg:flex lg:flex-row lg:space-x-6 xl:space-x-12 lg:mb-10 items-center justify-center">
               {/* Service 1 */}
-              <div className="flex w-[150px] h-[170px] lg:w-[230px] lg:h-[250px] bg-white flex-col z-10 cursor-pointer">
+              <div className="scale-100 hover:scale-110 ease-in-out duration-[0.2s] flex w-[150px] h-[170px] lg:w-[230px] lg:h-[250px] bg-white flex-col z-10 cursor-pointer">
                 {/* image 1 */}
                 <img src="../image/FirstServiceLogo.png" alt="firstservice" />
                 {/* text 1 */}
@@ -379,7 +400,7 @@ function App() {
                 </p>
               </div>
               {/* Service 2 */}
-              <div className="flex w-[150px] h-[170px] lg:w-[230px] lg:h-[250px] bg-white flex-col z-10 cursor-pointer">
+              <div className="scale-100 hover:scale-110 ease-in-out duration-[0.2s] flex w-[150px] h-[170px] lg:w-[230px] lg:h-[250px] bg-white flex-col z-10 cursor-pointer">
                 {/* image 2 */}
                 <img src="../image/SecondServiceLogo.png" alt="secondservice" />
                 {/* text 2 */}
@@ -388,7 +409,7 @@ function App() {
                 </p>
               </div>
               {/* Service 3 */}
-              <div className="flex w-[150px] h-[170px] lg:w-[230px] lg:h-[250px] bg-white flex-col z-10 cursor-pointer">
+              <div className="scale-100 hover:scale-110 ease-in-out duration-[0.2s] flex w-[150px] h-[170px] lg:w-[230px] lg:h-[250px] bg-white flex-col z-10 cursor-pointer">
                 {/* image 3 */}
                 <img src="../image/ThirdServiceLogo.png" alt="thirdservice" />
                 {/* text 3 */}
@@ -397,7 +418,7 @@ function App() {
                 </p>
               </div>
               {/* Service 4 */}
-              <div className="flex w-[150px] h-[170px] lg:w-[230px] lg:h-[250px] bg-white flex-col z-10 cursor-pointer">
+              <div className="scale-100 hover:scale-110 ease-in-out duration-[0.2s] flex w-[150px] h-[170px] lg:w-[230px] lg:h-[250px] bg-white flex-col z-10 cursor-pointer">
                 {/* image 4 */}
                 <img src="../image/FourthServiceLogo.png" alt="fourthservice" />
                 {/* text 4 */}
@@ -440,16 +461,16 @@ function App() {
           <div className="absolute flex w-full h-full bg-[url(./image/FormBG.png)] brightness-90 z-0 bg-cover" />
           {/* Send Us Informations Text */}
           <div className="flex w-full text-center h-fit flex-col items-center mt-28 z-20">
-            <p className="select-none text-primary-500 text-[40px] font-semibold break-all">
+            <p className="select-none text-primary-500 md:text-[40px] text-2xl font-semibold break-all">
               ส่งรายละเอียดเกี่ยวกับคุณ
             </p>
-            <p className="select-none break-words text-black-500 text-[20px] mt-2">
-              <span className="text-[30px] font-medium text-primary-500">
+            <p className="select-none break-words text-black-500 md:text-[20px] mt-2">
+              <span className="md:text-[30px] text-[20px] font-medium text-primary-500">
                 เรา
               </span>
               ยินดีที่จะให้บริการแก่คุณลูกค้าอย่างเต็มที่ <br />
               หากท่าน
-              <span className="text-primary-500 font-medium text-[22px] mr-2">
+              <span className="text-primary-500 font-medium md:text-[22px] mr-2">
                 มีข้อสงสัยหรือมีความต้องการ
               </span>
               เรายินดีรับฟังและหารือเกี่ยวกับบริการ
@@ -458,9 +479,9 @@ function App() {
             </p>
           </div>
           {/* InformationTab & Form */}
-          <div className="flex flex-row w-full h-fit mt-14 z-20 justify-center px-10">
+          <div className="flex flex-row w-full h-fit mt-14 z-20 justify-center px-4">
             {/* Informations */}
-            <div className="xl:flex hidden flex-col items-start w-full h-full space-y-8 pl-10">
+            <div className="xl:flex hidden flex-col items-start w-full h-full space-y-8 pl-16">
               {/* location */}
               <div className="flex flex-row gap-5 bg-white h-32 pl-4 w-[70%] rounded-r-full items-center justify-start opacity-85">
                 {/* Google Map Icon */}
@@ -481,7 +502,12 @@ function App() {
               </div>
 
               {/* Email */}
-              <div className="flex flex-row gap-5 bg-white h-32 pl-4 w-[70%] rounded-r-full items-center justify-start opacity-85">
+              <div
+                onClick={() => {
+                  handleEmailClick();
+                }}
+                className="flex cursor-pointer flex-row gap-5 bg-white h-32 pl-4 w-[70%] rounded-r-full items-center justify-start opacity-85"
+              >
                 {/* Email Icon */}
                 <img
                   src={emailIcon}
@@ -512,31 +538,36 @@ function App() {
                   </p>
                   <p>รับข่าวสารสดใหม่เพียงติดตามเราช่องทางต่างๆ</p>
                   <div className="flex space-x-5 mt-3">
-                    <button className="flex pl-2 pr-4 py-1 bg-[#295396] text-white items-center gap-2 rounded-full">
+                    <a
+                      href="https://www.facebook.com/profile.php?id=100078187762237"
+                      className="flex cursor-pointer pl-2 pr-4 py-1 bg-[#295396] text-white items-center gap-2 rounded-full"
+                    >
                       <img
                         className="w-6 h-6"
                         src={facebookIcon}
                         alt="facebook logo"
                       />
                       <p className="text-xs">facebook</p>
-                    </button>
-                    <button className="flex pl-2 pr-4 bg-[#00B900] text-white items-center gap-2 rounded-full">
-                      <img
-                        className="w-6 h-6"
-                        src={lineIcon}
-                        alt="facebook logo"
-                      />
-                      <p className="text-xs">facebook</p>
-                    </button>
+                    </a>
+                    <a
+                      href="https://line.me/R/ti/p/@608izthw"
+                      className="flex cursor-pointer pl-2 pr-4 bg-[#00B900] text-white items-center gap-2 rounded-full"
+                    >
+                      <img className="w-6 h-6" src={lineIcon} alt="line logo" />
+                      <p className="text-xs">LINE</p>
+                    </a>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Form */}
-            <div className="text-center p-8 bg-white h-fit rounded-2xl 2xl:mr-80 xl:mr-48 mr-0 w-[50rem]">
+            <div className="relative text-center p-8 bg-white h-fit rounded-2xl 2xl:mr-80 xl:mr-48 mr-0 w-[50rem]">
               <p className="text-secondary-500 text-2xl">ติดต่อเรา</p>
-              <form className="flex flex-col space-y-5 mt-8">
+              <form
+                onSubmit={formSubmitHandle}
+                className="flex flex-col space-y-5 mt-8"
+              >
                 <div className="flex gap-8">
                   <input
                     type="text"
@@ -569,34 +600,128 @@ function App() {
                 />
                 <select
                   className="p-2 outline outline-1 outline-gray-500 rounded-xl pl-4"
+                  name="service"
                   required
                 >
-                  <option value="" disabled selected>
-                    เลือกบริการที่สนใจ
+                  <option value={null} disabled>
+                    เลือกบริการที่สนใจ *
                   </option>
                   <option value="option_1">
                     รับทำบัญชีรายเดือน และยื่นภาษี
                   </option>
-                  <option value="option_1">
-                    รับทำบัญชีรายเดือน และยื่นภาษี
+                  <option value="option_2">บริการตรวจสอบ รับรองบัญชี</option>
+                  <option value="option_3">
+                    จดทะเบียนบริษัทจำกัด / ห้างหุ้นส่วนฯ
                   </option>
-                  <option value="option_1">
-                    รับทำบัญชีรายเดือน และยื่นภาษี
-                  </option>
-                  <option value="option_1">
-                    รับทำบัญชีรายเดือน และยื่นภาษี
-                  </option>
+                  <option value="option_4">บริการที่ปรึกษา และวางแผนภาษี</option>
                 </select>
                 <textarea
                   className="p-2 outline outline-1 outline-gray-500 rounded-xl pl-4"
                   name="detail"
                   placeholder="รายละเอียด..."
                 ></textarea>
-                <button className="bg-secondary-600 p-3 text-white rounded-xl" type="submit">ยืนยัน</button>
+                <button
+                  className="bg-secondary-600 p-3 text-white rounded-xl"
+                  type="submit"
+                >
+                  ยืนยัน
+                </button>
               </form>
+
+              {/* แชร์ */}
+              <div className="hidden z-20 absolute -bottom-20 right-0 xl:flex flex-col items-start space-y-2">
+                <p className="text-sm">แชร์ :</p>
+                <div className="flex gap-2">
+                  <button>
+                    <img
+                      className="w-8"
+                      src={facebookIcon}
+                      alt="facebook logo"
+                    />
+                  </button>
+                  <button>
+                    <img className="w-8" src={lineIcon} alt="line logo" />
+                  </button>
+                  <button>
+                    <img className="w-8" src={XIcon} alt="x logo" />
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
-          <div className="gray-overlay absolute inset-20 -top-20 h-full bg-[#FFFFFF] opacity-50 z-10 " />
+          {/* InformationTab Mobile size */}
+          <div className="flex xl:hidden items-center justify-center w-full h-20 z-20 mt-10 lg:px-64 md:px-48">
+            <div className="flex items-center justify-center gap-5">
+              <div className="flex flex-col items-center space-y-2">
+                <img
+                  className="w-12 h-12 bg-white p-2 rounded-full"
+                  src={googleMapIcon}
+                  alt="google map icon"
+                />
+                <p className="text-primary-500 text-xs font-bold">ที่ตั้ง</p>
+              </div>
+
+              <div className="flex flex-col items-center space-y-2">
+                <img
+                  className="w-12 h-12 bg-white rounded-full"
+                  src={emailIcon}
+                  alt="google map icon"
+                />
+                <p className="text-primary-500 text-xs font-bold">อีเมล</p>
+              </div>
+
+              <div className="flex flex-col items-center space-y-2">
+                <img
+                  className="w-12 h-12 bg-white rounded-full"
+                  src={facebookIcon}
+                  alt="google map icon"
+                />
+                <p className="text-primary-500 text-xs font-bold">facebook</p>
+              </div>
+
+              <div className="flex flex-col items-center space-y-2">
+                <img
+                  className="w-12 h-12 bg-white rounded-full"
+                  src={lineIcon}
+                  alt="google map icon"
+                />
+                <p className="text-primary-500 text-xs font-bold">LINE</p>
+              </div>
+
+              <div
+                onClick={() => {
+                  setSharePopup(true);
+                }}
+                className="relative flex flex-col items-center space-y-2 cursor-pointer"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="2"
+                  stroke="currentColor"
+                  className="w-12 h-12 bg-white rounded-full p-4"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M7.217 10.907a2.25 2.25 0 1 0 0 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186 9.566-5.314m-9.566 7.5 9.566 5.314m0 0a2.25 2.25 0 1 0 3.935 2.186 2.25 2.25 0 0 0-3.935-2.186Zm0-12.814a2.25 2.25 0 1 0 3.933-2.185 2.25 2.25 0 0 0-3.933 2.185Z"
+                  />
+                </svg>
+
+                <p className="text-primary-500 text-xs font-bold">แชร์</p>
+
+                <SharePopup
+                  show={sharePopup}
+                  onClose={() => {
+                    setSharePopup(false);
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="gray-overlay absolute md:inset-20 inset-0 -top-20 bg-[#FFFFFF] opacity-50 z-10 " />
         </section>
       </div>
       {/* footer */}
