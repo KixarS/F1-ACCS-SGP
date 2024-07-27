@@ -43,7 +43,7 @@ function App() {
           {/* Home , Customer , Service , Contact */}
           <nav className="flex flex-row items-center mr-5 text-[18px] h-full space-x-10 min-w-fit duration-300 font-medium ">
             <a
-              href="#home"
+              href="#"
               className="flex relative h-full items-center min-w-fit justify-center duration-300 underline-button active"
             >
               หน้าหลัก
@@ -111,7 +111,7 @@ function App() {
         >
           <nav className=" flex flex-col items-start justify-end text-[24px] max-h-screen space-y-8 h-1/2 min-w-fit duration-300 font-medium text-[#75b498]">
             <a
-              href="#home"
+              href="#"
               className="flex flex-col relative h-10 items-center min-w-fit justify-center duration-300 lg:underline-button"
             >
               <div className="flex flex-row justify-center h-full items-center space-x-5">
@@ -198,13 +198,15 @@ function App() {
           className="flex flex-row justify-start relative w-full min-h-[450px] h-[500px] overflow-hidden mx-auto"
         >
           {/* Content */}
-          <div className="flex lg:max-w-[750px] xl:max-w-[60%] w-full 2xl h-full items-center z-10 flex-row">
-            <div className="flex flex-row h-full w-fit items-center relative lg:ml-[10%] xl:ml-[25%] 2xl:ml-[400px]">
-              <img
-                src={navlogo}
-                alt="accsonlylogo"
-                className="object-cover lg:min-w-[300px] lg:min-h-[215px] lg:mb-20 lg:max-w-[300px]  lg:max-h-[215px] xl:min-w-[330px] xl:min-h-[260px] xl:max-w-[330px] xl:max-h-[260px]"
-              />
+          <div className="flex w-full h-full items-center justify-center flex-row z-10 bg-red-200">
+            <div className="flex flex-row h-full w-fit items-center">
+              <div className="">
+                <img
+                  src={navlogo}
+                  alt="accsonlylogo"
+                  className="object-cover w-full h-full"
+                />
+              </div>
               {/* Text */}
               <div className="flex w-full h-full mt-48 flex-col justify-start select-none">
                 <p className="text-primary-500 font-semibold text-[48px] whitespace-nowrap">
@@ -290,10 +292,17 @@ function App() {
                   </div>
                 </div>
                 <div className="flex w-full justify-center h-fit mt-5">
-                  <a href="#service" className="flex w-[130px] h-[48px] bg-secondary-500 text-white justify-center items-center rounded-sm">
+                  <a
+                    href="#service"
+                    className="flex w-[130px] h-[48px] bg-secondary-500 text-white justify-center items-center rounded-sm"
+                  >
                     <p className="font-light text-[16px]">บริการของเรา</p>
                   </a>
                 </div>
+              </div>
+              {/* woman prop */}
+              <div className="flex h-full w-fit justify-end">
+                <img src={carouselPropOne} alt="standingGirl" className="" />
               </div>
             </div>
           </div>
@@ -302,12 +311,6 @@ function App() {
             src={carouselBG}
             alt="carouselbg"
             className="object-cover min-w-full min-h-full absolute right-0 bottom-0 brightness-95"
-          />
-          {/* woman prop */}
-          <img
-            src={carouselPropOne}
-            alt="standingGirl"
-            className="absolute -right-9 scale-75 -bottom-11 sm:bottom-3 sm:right-0 sm:scale-110 xl:h-5/6 2xl:right-[20%] lg:right-[5%] xl:right[10%] object-cover z-10"
           />
           <div className="gray-overlay absolute inset-0 h-full bg-[#FFFFFF] opacity-50 z-0 " />
         </section>
