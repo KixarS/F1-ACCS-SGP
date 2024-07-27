@@ -1,6 +1,5 @@
 import "./App.css";
 import navlogo from "/image/AccsLogo.png";
-import thailogo from "/image/ThaiLogo.png";
 import carouselBG from "/image/CarouselBG.png";
 import carouselPropOne from "/image/CarouselPropOne.png";
 import accsonlylogo from "/image/AccsOnlyLogo.png";
@@ -8,6 +7,10 @@ import accsonlytext from "/image/AccsOnlyText.png";
 import linelogo from "/image/LineLogo.png";
 import GRLogo from "/image/GRLogo.png";
 import googleMapIcon from "/image/GoogleMapIcon.png";
+import emailIcon from "/image/EmailIcon.png";
+import facebookIcon from "/image/FacebookLogo.png";
+import lineIcon from "/image/LineIcon.png";
+import FollowInfomationIcon from "/image/FollowInfomationIcon.png";
 import { useEffect, useState } from "react";
 import clsx from "clsx";
 
@@ -447,11 +450,11 @@ function App() {
             </p>
           </div>
           {/* InformationTab & Form */}
-          <div className="flex flex-row w-full h-full mt-14 z-20 mx-auto">
+          <div className="flex flex-row w-full h-fit mt-14 z-20 justify-center px-10">
             {/* Informations */}
-            <div className="flex flex-col items-start ml-20 w-full h-full">
+            <div className="xl:flex hidden flex-col items-start w-full h-full space-y-8 pl-10">
               {/* location */}
-              <div className="flex flex-row bg-white w-[30%] rounded-r-full h-[165px] items-center justify-start opacity-85">
+              <div className="flex flex-row gap-5 bg-white h-32 pl-4 w-[70%] rounded-r-full items-center justify-start opacity-85">
                 {/* Google Map Icon */}
                 <img
                   src={googleMapIcon}
@@ -459,8 +462,130 @@ function App() {
                   className="object-cover min-w-[80px] min-h-[80px] max-w-[80px] max-h-[80px]"
                 />
                 {/* Company Location */}
-                <div></div>
+                <div>
+                  <p className="text-xl font-bold text-primary-500">
+                    ที่ตั้งสำนักงาน
+                  </p>
+                  <p>บริษัทแอคคลูซีฟ จำกัด</p>
+                  <p>754/87 ซอย สุขุมวิท 101 แขวงบางจาก</p>
+                  <p>เขตพระโขนง กรุงเทพมหานคร 10260</p>
+                </div>
               </div>
+
+              {/* Email */}
+              <div className="flex flex-row gap-5 bg-white h-32 pl-4 w-[70%] rounded-r-full items-center justify-start opacity-85">
+                {/* Email Icon */}
+                <img
+                  src={emailIcon}
+                  alt="map"
+                  className="object-cover min-w-[80px] min-h-[80px] max-w-[80px] max-h-[80px]"
+                />
+                {/* Email contact */}
+                <div>
+                  <p className="text-xl font-bold text-primary-500">
+                    ติดต่อทางอีเมล
+                  </p>
+                  <p>Info.acclusive@gmail.com</p>
+                </div>
+              </div>
+
+              {/* Follow Infomation */}
+              <div className="flex flex-row gap-5 bg-white h-32 pl-4 w-[70%] rounded-r-full items-center justify-start opacity-85">
+                {/* Follow Infomation Icon */}
+                <img
+                  src={FollowInfomationIcon}
+                  alt="map"
+                  className="object-cover min-w-[80px] min-h-[80px] max-w-[80px] max-h-[80px]"
+                />
+                {/* Follow Infomation Content */}
+                <div>
+                  <p className="text-xl font-bold text-primary-500">
+                    ติดตามข้อมูล
+                  </p>
+                  <p>รับข่าวสารสดใหม่เพียงติดตามเราช่องทางต่างๆ</p>
+                  <div className="flex space-x-5 mt-3">
+                    <button className="flex pl-2 pr-4 py-1 bg-[#295396] text-white items-center gap-2 rounded-full">
+                      <img
+                        className="w-6 h-6"
+                        src={facebookIcon}
+                        alt="facebook logo"
+                      />
+                      <p className="text-xs">facebook</p>
+                    </button>
+                    <button className="flex pl-2 pr-4 bg-[#00B900] text-white items-center gap-2 rounded-full">
+                      <img
+                        className="w-6 h-6"
+                        src={lineIcon}
+                        alt="facebook logo"
+                      />
+                      <p className="text-xs">facebook</p>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Form */}
+            <div className="text-center p-8 bg-white h-fit rounded-2xl 2xl:mr-80 xl:mr-48 mr-0 w-[50rem]">
+              <p className="text-secondary-500 text-2xl">ติดต่อเรา</p>
+              <form className="flex flex-col space-y-5 mt-8">
+                <div className="flex gap-8">
+                  <input
+                    type="text"
+                    className="p-2 w-full outline outline-1 outline-gray-500 rounded-xl pl-4"
+                    required
+                    placeholder="ชื่อ *"
+                    name="firstname"
+                  />
+                  <input
+                    type="text"
+                    className="p-2 w-full outline outline-1 outline-gray-500 rounded-xl pl-4"
+                    required
+                    placeholder="นามสกุล *"
+                    name="lastname"
+                  />
+                </div>
+                <input
+                  type="tel"
+                  className="p-2 outline outline-1 outline-gray-500 rounded-xl pl-4"
+                  required
+                  placeholder="เบอร์ติดต่อ *"
+                  name="phone"
+                />
+                <input
+                  type="email"
+                  className="p-2 outline outline-1 outline-gray-500 rounded-xl pl-4"
+                  required
+                  placeholder="อีเมล *"
+                  name="email"
+                />
+                <select
+                  className="p-2 outline outline-1 outline-gray-500 rounded-xl pl-4"
+                  required
+                >
+                  <option value="" disabled selected>
+                    เลือกบริการที่สนใจ
+                  </option>
+                  <option value="option_1">
+                    รับทำบัญชีรายเดือน และยื่นภาษี
+                  </option>
+                  <option value="option_1">
+                    รับทำบัญชีรายเดือน และยื่นภาษี
+                  </option>
+                  <option value="option_1">
+                    รับทำบัญชีรายเดือน และยื่นภาษี
+                  </option>
+                  <option value="option_1">
+                    รับทำบัญชีรายเดือน และยื่นภาษี
+                  </option>
+                </select>
+                <textarea
+                  className="p-2 outline outline-1 outline-gray-500 rounded-xl pl-4"
+                  name="detail"
+                  placeholder="รายละเอียด..."
+                ></textarea>
+                <button className="bg-secondary-600 p-3 text-white rounded-xl" type="submit">ยืนยัน</button>
+              </form>
             </div>
           </div>
           <div className="gray-overlay absolute inset-20 -top-20 h-full bg-[#FFFFFF] opacity-50 z-10 " />
