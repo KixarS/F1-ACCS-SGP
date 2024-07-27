@@ -510,7 +510,7 @@ function App() {
             {/* Informations */}
             <div className="xl:flex hidden flex-col items-start w-full h-full space-y-8 pl-16">
               {/* location */}
-              <div className="flex flex-row xl:gap-10 gap-5 bg-white h-36 xl:pl-20 pl-5 w-[70%] rounded-r-full items-center justify-start opacity-85">
+              <div className="flex flex-row gap-5 bg-white h-36 xl:pl-10 pl-5 w-[70%] rounded-r-full items-center justify-start opacity-85">
                 {/* Google Map Icon */}
                 <img
                   src={googleMapIcon}
@@ -535,7 +535,7 @@ function App() {
                 onClick={() => {
                   handleEmailClick();
                 }}
-                className="flex cursor-pointer flex-row gap-5 xl:gap-10 bg-white  duration-300 ease-in-out from-white to-secondary-300 h-36 pl-5 xl:pl-20 w-[70%] rounded-r-full items-center justify-start opacity-85"
+                className="flex cursor-pointer flex-row gap-5 bg-white  duration-300 ease-in-out from-white to-secondary-300 h-36 pl-5 xl:pl-10 w-[70%] rounded-r-full items-center justify-start opacity-85"
               >
                 {/* Email Icon */}
                 <img
@@ -553,7 +553,7 @@ function App() {
               </div>
 
               {/* Follow Infomation */}
-              <div className="flex flex-row gap-5 xl:gap-10 bg-white h-36 pl-5 xl:pl-20 w-[70%] rounded-r-full items-center justify-start opacity-85">
+              <div className="flex flex-row gap-5 bg-white h-36 pl-5 xl:pl-10 w-[70%] rounded-r-full items-center justify-start opacity-85">
                 {/* Follow Infomation Icon */}
                 <img
                   src={FollowInfomationIcon}
