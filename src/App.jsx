@@ -18,6 +18,8 @@ import emailIcon from "/image/EmailIcon.png";
 import facebookIcon from "/image/FacebookLogo.png";
 import lineIcon from "/image/LineIcon.png";
 import XIcon from "/image/XLogo.png";
+import PictureLine from "/image/PictureLine.png";
+import Facebook from "/image/Facebook.png";
 import FollowInfomationIcon from "/image/FollowInfomationIcon.png";
 import { useEffect, useState } from "react";
 import clsx from "clsx";
@@ -719,19 +721,28 @@ function App() {
               <div className="hidden z-20 absolute -bottom-20 right-0 xl:flex flex-col items-start space-y-2">
                 <p className="text-sm">แชร์ :</p>
                 <div className="flex gap-2">
-                  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100078187762237&amp;src=sdkpreparse">
+                  <a
+                    target="_blank"
+                    href="https://www.facebook.com/sharer/sharer.php?u=https://acclusive.co"
+                  >
                     <img
                       className="w-8"
                       src={facebookIcon}
                       alt="facebook logo"
                     />
                   </a>
-                  <button>
+                  <a
+                    target="_blank"
+                    href="https://social-plugins.line.me/lineit/share?url=https://acclusive.co"
+                  >
                     <img className="w-8" src={lineIcon} alt="line logo" />
-                  </button>
-                  <button>
+                  </a>
+                  <a
+                    target="_blank"
+                    href="https://twitter.com/intent/tweet?url=https://acclusive.co"
+                  >
                     <img className="w-8" src={XIcon} alt="x logo" />
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -813,10 +824,10 @@ function App() {
         </section>
       </div>
       {/* footer */}
-      <section className="flex relative h-[550px] bg-white flex-col ">
-        <div className="flex w-full h-full flex-row">
+      <section className="flex relative bg-white flex-col">
+        <div className="flex w-full h-full xl:flex-row flex-col mt-10">
           {/* Logo */}
-          <div className="flex flex-col items-center w-6/12 justify-center">
+          <div className="flex flex-col items-center xl:w-6/12 w-full justify-center">
             <img
               src={accsonlylogo}
               alt="accs-logo"
@@ -827,27 +838,77 @@ function App() {
               alt="accs-logo"
               className="cursor-pointer"
             />
-            <div className="flex flex-col items-center space-y-1 mt-1 font-medium text-primary-500 text-[20px] select-none">
+            <div className="flex flex-col items-center space-y-1 mt-1 text-lg text-primary-500 text-[20px] select-none">
               <p>สำนักงานบัญชียุคใหม่</p>
               <p>ยินดีให้บริการด้านบัญชีและภาษีครบวงจร</p>
               <p>เราพร้อมจะเป็นที่ปรึกษาให้ธุรกิจของคุณ</p>
             </div>
           </div>
-          <div className="flex flex-col w-full">
-            <div className="flex flex-row w-full">
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
+          <div className="flex items-center flex-col w-full">
+            <div className="flex flex-row justify-center items-center xl:gap-20 gap-5 text-md text-primary-500 xl:text-lg xl:p-10 p-5 w-full">
+              <a href="#">หน้าหลัก</a>
+              <a href="#sponsor">เกี่ยวกับเรา</a>
+              <a href="#service">บริการของเรา</a>
+              <a href="#contact">ติดต่อเรา</a>
+            </div>
+            <img className="w-full object-cover" src={PictureLine} alt="" />
+            <div className="mt-14 flex items-start lg:flex-row flex-col justify-center w-full">
+              <div className="p-4 h-44 w-full">
+                <p className="text-xl text-primary-500">ช่องทางการติดต่อ</p>
+                <div className="mt-5">
+                  <p>Info.acclusive@gmail.com</p>
+                  <p>(085) 044-6664 , (062) 556-5549</p>
+                  <p>เวลาทำการ : 9.00 - 18.00 น. วันจันทร์ - ศุกร์</p>
+                </div>
+              </div>
+
+              <div className="lg:h-44 h-[1px] lg:w-[1px] w-full bg-gray-300" />
+
+              <div className="p-4 h-44 w-full">
+                <p className="text-xl text-primary-500">ที่ตั้งสำนักงาน</p>
+                <div className="mt-5">
+                  <p>บริษัทแอคคลูซีฟ จำกัด</p>
+                  <p>754/87 ซอย สุขุมวิท 101 แขวงบางจาก</p>
+                  <p>เขตพระโขนง กรุงเทพมหานคร 10260</p>
+                </div>
+              </div>
+
+              <div className="lg:h-44 h-[1px] lg:w-[1px] w-full bg-gray-300" />
+
+              <div className="p-4 h-44 w-full">
+                <p className="text-xl text-primary-500">ติดตามเรา</p>
+                <div className="mt-5">
+                  <p>กดติดตามช่องทางต่างๆ</p>
+                  <p>เพื่อรับข่าวสารสดใหม่จากเรา</p>
+                  <div className="space-y-3 mt-5">
+                    <a
+                      target="_blank"
+                      href="https://line.me/R/ti/p/@608izthw"
+                      className="flex items-center gap-3 cursor-pointer"
+                    >
+                      <img className="w-7" src={linelogo} alt="" />
+                      <p>Line Official</p>
+                    </a>
+                    <a
+                      target="_blank"
+                      href="https://www.facebook.com/profile.php?id=100078187762237"
+                      className="flex items-center gap-1 cursor-pointer"
+                    >
+                      <img className="w-9" src={Facebook} alt="" />
+                      <p>Facebook</p>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div className="flex w-full h-[75px] flex-row justify-center items-center text-white bg-black-500">
+        <div className="mt-28 flex w-full h-[75px] flex-row justify-center items-center text-white bg-black-500">
           <p className="select-none">
             © 2024 ACCLUSIVE Co., Ltd. All Rights Reserved
           </p>
         </div>
-        <button className="fixed bottom-3 right-3 z-30 flex justify-end bg-[#F8F8F8]/95 p-2 rounded-xl h-fit w-fit select-none">
+        <button className="fixed bottom-24 right-3 z-30 flex justify-end bg-[#F8F8F8]/95 p-2 rounded-xl h-fit w-fit select-none">
           <a
             href="https://line.me/R/ti/p/@608izthw"
             className="flex w-[45px] h-[45px] items-center justify-center flex-row object-cover"
