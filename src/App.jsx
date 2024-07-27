@@ -632,7 +632,7 @@ function App() {
                         src={facebookIcon}
                         alt="facebook logo"
                       />
-                      <p className="text-xs">facebook</p>
+                      <p className="text-xs">Facebook</p>
                     </a>
                     <a
                       href="https://line.me/R/ti/p/@608izthw"
@@ -765,18 +765,20 @@ function App() {
               </div>
 
               <a
+                target="_blank"
                 className="flex flex-col items-center space-y-2"
-                href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100078187762237&amp;src=sdkpreparse"
+                href="https://www.facebook.com/profile.php?id=100078187762237"
               >
                 <img
                   className="w-12 h-12 bg-white rounded-full"
                   src={facebookIcon}
                   alt="google map icon"
                 />
-                <p className="text-primary-500 text-xs font-bold">facebook</p>
+                <p className="text-primary-500 text-xs font-bold">Facebook</p>
               </a>
 
               <a
+                target="_blank"
                 className="flex flex-col items-center space-y-2"
                 href="https://line.me/R/ti/p/@608izthw"
               >
