@@ -39,10 +39,13 @@ function SharePopup({ show, onClose }) {
       )}
     >
       <button className="hover:bg-gray-200 p-1 ease-in-out duration-[0.2s] rounded-lg px-2">
-        <div className="flex w-full h-fit items-center justify-between text-black-500">
+        <a
+          className="flex w-full h-fit items-center justify-between text-black-500"
+          href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100078187762237&amp;src=sdkpreparse"
+        >
           <p>แชร์ไปยัง</p>
           <img className="w-6 h-6" src={facebookIcon} alt="" />
-        </div>
+        </a>
       </button>
 
       <button className="hover:bg-gray-200 p-1 ease-in-out duration-[0.2s] rounded-lg px-2">

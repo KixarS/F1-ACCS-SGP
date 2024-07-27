@@ -4,6 +4,7 @@ import carouselBG from "/image/CarouselBG.png";
 import carouselPropOne from "/image/CarouselPropOne.png";
 import accsonlylogo from "/image/AccsOnlyLogo.png";
 import accsonlytext from "/image/AccsOnlyText.png";
+import ourservice from "/image/OurServiceBG.png";
 import linelogo from "/image/LineLogo.png";
 import GRLogo from "/image/GRLogo.png";
 import YadaLogo from "/image/Yada.png";
@@ -354,7 +355,7 @@ function App() {
         {/* Sponsor */}
         <section
           id="sponsor"
-          className="flex flex-col items-center pt-10 md:pt-0 justify-center h-[600px] w-full sm:pb-3 mx-auto"
+          className="flex flex-col items-center pt-10 md:pt-0 justify-center h-[600px] w-full sm:pb-3 mx-auto relative"
         >
           {/* Our Sponsor Head Text */}
           <p className="flex text-primary-500 text-[30px] lg:text-[40px] font-semibold mb-4 select-none text-center break-words">
@@ -410,7 +411,7 @@ function App() {
           id="service"
           className="flex flex-col min-h-[400px] h-fit lg:min-h-fit lg:h-[600px] w-full items-center justify-center relative mx-auto "
         >
-          <div className="min-w-full bg-cover min-h-full bg-[url(./image/OurServiceBG.png)] bg-opacity-70 flex flex-col justify-center items-center mt-10 lg:mt-0 pt-20 pb-28 lg:pt-0 lg:pb-0">
+          <div className="min-w-full bg-cover min-h-full flex flex-col justify-center items-center mt-10 lg:mt-0 pt-20 pb-28 lg:pt-0 lg:pb-0">
             {/* Service Text */}
             <div className="flex text-primary-500 text-[30px] lg:text-[40px] font-semibold mb-5 lg:mb-10 z-10 select-none">
               บริการของเรา
@@ -456,6 +457,11 @@ function App() {
                 </p>
               </div>
             </div>
+            <img
+              src={ourservice}
+              alt="carouselbg"
+              className="object-cover w-full h-full absolute right-0 bottom-0 brightness-95"
+            />
             {/* WhiteCover BG */}
             <div className="gray-overlay absolute md:inset-0 xl:inset-10 bg-[#FFFFFF]/90 opacity-50" />
           </div>
@@ -663,13 +669,13 @@ function App() {
               <div className="hidden z-20 absolute -bottom-20 right-0 xl:flex flex-col items-start space-y-2">
                 <p className="text-sm">แชร์ :</p>
                 <div className="flex gap-2">
-                  <button>
+                  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100078187762237&amp;src=sdkpreparse">
                     <img
                       className="w-8"
                       src={facebookIcon}
                       alt="facebook logo"
                     />
-                  </button>
+                  </a>
                   <button>
                     <img className="w-8" src={lineIcon} alt="line logo" />
                   </button>
@@ -683,8 +689,12 @@ function App() {
           {/* InformationTab Mobile size */}
           <div className="flex xl:hidden items-center justify-center w-full h-20 z-20 mt-10 lg:px-64 md:px-48">
             <div className="flex items-center justify-center gap-5">
-              
-              <div className="flex flex-col items-center space-y-2">
+              <div
+                className="flex flex-col items-center space-y-2"
+                onClick={() => {
+                  handleEmailClick();
+                }}
+              >
                 <img
                   className="w-12 h-12 bg-white rounded-full"
                   src={emailIcon}
@@ -693,23 +703,29 @@ function App() {
                 <p className="text-primary-500 text-xs font-bold">อีเมล</p>
               </div>
 
-              <div className="flex flex-col items-center space-y-2">
+              <a
+                className="flex flex-col items-center space-y-2"
+                href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100078187762237&amp;src=sdkpreparse"
+              >
                 <img
                   className="w-12 h-12 bg-white rounded-full"
                   src={facebookIcon}
                   alt="google map icon"
                 />
                 <p className="text-primary-500 text-xs font-bold">facebook</p>
-              </div>
+              </a>
 
-              <div className="flex flex-col items-center space-y-2">
+              <a
+                className="flex flex-col items-center space-y-2"
+                href="https://line.me/R/ti/p/@608izthw"
+              >
                 <img
                   className="w-12 h-12 bg-white rounded-full"
                   src={lineIcon}
                   alt="google map icon"
                 />
                 <p className="text-primary-500 text-xs font-bold">LINE</p>
-              </div>
+              </a>
 
               <div
                 onClick={() => {
@@ -750,6 +766,7 @@ function App() {
       {/* footer */}
       <section className="flex relative h-[550px] bg-white flex-col ">
         <div className="flex w-full h-full flex-row">
+          {/* Logo */}
           <div className="flex flex-col items-center w-6/12 justify-center">
             <img
               src={accsonlylogo}
@@ -782,13 +799,16 @@ function App() {
           </p>
         </div>
         <button className="fixed bottom-3 right-3 z-30 flex justify-end bg-[#F8F8F8]/95 p-2 rounded-xl h-fit w-fit select-none">
-          <div className="flex w-[45px] h-[45px] items-center justify-center flex-row object-cover">
+          <a
+            href="https://line.me/R/ti/p/@608izthw"
+            className="flex w-[45px] h-[45px] items-center justify-center flex-row object-cover"
+          >
             <img
               src={linelogo}
               alt="line"
               className="min-w-[45px] min-h-[45px] max-w-[45px] max-h-[45px] object-cover"
             />
-          </div>
+          </a>
         </button>
       </section>
     </div>
