@@ -7,6 +7,7 @@ import accsonlytext from "/image/AccsOnlyText.png";
 import ourservice from "/image/OurServiceBG.png";
 import linelogo from "/image/LineLogo.png";
 import GRLogo from "/image/GRLogo.png";
+import FormBG from "/image/FormBG.png";
 import YadaLogo from "/image/Yada.png";
 import PrismaLogo from "/image/Prisma.png";
 import NuraLogo from "/image/Nura.png";
@@ -491,7 +492,11 @@ function App() {
           id="form"
           className="relative flex w-full flex-col items-center h-[1060px] overflow-hidden mx-auto"
         >
-          <div className="absolute flex w-full h-full bg-[url(./image/FormBG.png)] brightness-90 z-0 bg-cover" />
+          <img
+            src={FormBG}
+            alt="form"
+            className="object-cover w-full h-full absolute right-0 bottom-0 brightness-95"
+          />
           {/* Send Us Informations Text */}
           <div className="flex w-full text-center h-fit flex-col items-center mt-28 z-20">
             <p className="select-none text-primary-500 md:text-[40px] text-2xl font-semibold break-all">
@@ -759,7 +764,6 @@ function App() {
               </div>
             </div>
           </div>
-
           <div className="gray-overlay absolute md:inset-20 inset-0 -top-20 bg-[#FFFFFF] opacity-50 z-10 " />
         </section>
       </div>
