@@ -24,7 +24,7 @@ function App() {
   }, [HamNavOpen]);
 
   return (
-    <div className="flex w-full min-h-screen h-fit flex-col relative ">
+    <div className="flex w-full min-h-screen h-fit flex-col relative">
       {/* Navigation Bar */}
       <header className="flex flex-row sticky top-0 justify-between items-center w-full h-[79px] text-black-300 bg-white drop-shadow-lg text-base z-50">
         {/* Logo */}
@@ -102,10 +102,10 @@ function App() {
         {/* Hamburger content */}
         <div
           className={clsx(
-            "fixed flex flex-row justify-center lg:hidden left-0 z-40 bg-white w-full",
+            "fixed flex flex-row justify-center lg:hidden left-0 z-40 bg-white w-screen ease-in-out",
             HamNavOpen
               ? "ml-0 h-screen opacity-100 duration-300 "
-              : "ml-[420px] opacity-0 h-screen duration-300 "
+              : "ml-[100%] opacity-100 h-screen duration-300 "
           )}
           onClick={HamNavOpenHandle}
         >
@@ -198,9 +198,10 @@ function App() {
           className="flex flex-row justify-start relative w-full min-h-[450px] h-[500px] overflow-hidden mx-auto"
         >
           {/* Content */}
-          <div className="flex w-full h-full items-center justify-center flex-row z-10 bg-red-200">
-            <div className="flex flex-row h-full w-fit items-center">
-              <div className="">
+          <div className="flex w-full h-full justify-center flex-row z-10">
+            <div className="flex flex-col md:flex-row h-full w-fit lg:items-center ">
+              {/* logo */}
+              <div className="sm:min-w-[170px] sm:min-h-[140px] sm:max-w-[170px] sm:max-h-[170px] lg:min-w-[340px] lg:min-h-[280px] lg:max-w-[340px] lg:max-h-[280px] mb-12 lg:flex hidden">
                 <img
                   src={navlogo}
                   alt="accsonlylogo"
@@ -208,14 +209,14 @@ function App() {
                 />
               </div>
               {/* Text */}
-              <div className="flex w-full h-full mt-48 flex-col justify-start select-none">
-                <p className="text-primary-500 font-semibold text-[48px] whitespace-nowrap">
+              <div className="flex w-full h-full ml-4 lg:ml-0 mt-24 lg:mt-52 flex-col justify-start select-none mx-auto z-20">
+                <p className="text-primary-500 font-semibold text-[30px] sm:text-[41px]">
                   บริการด้านบัญชีภาษี <br /> ดูแลธุรกิจครบวงจร
                 </p>
-                <p className="text-black-300 text-[22px] font-medium text-start mt-5 ml-6">
+                <p className="text-black-300 ml-1 text-[16px] sm:text-[20px] font-medium text-start mt-3">
                   ถ้าหากคุณเป็นผู้ประกอบการที่
                 </p>
-                <div className="flex flex-col ml-10 mt-2 space-y-1">
+                <div className="flex flex-col lg:ml-10 mt-2 space-y-1 w-full">
                   <div className="flex flex-row space-x-3 items-center">
                     <svg
                       width="20"
@@ -233,7 +234,7 @@ function App() {
                         fill="#75b498"
                       />
                     </svg>
-                    <p className="text-black-300 text-[20px] text-start">
+                    <p className="text-black-300 text-[14px] lg:text-[18px] text-start">
                       ใส่ใจเรื่อง
                       <span className="text-secondary-600">ภาษี</span>และ
                       <span className="text-secondary-600">ความถูกต้อง</span>
@@ -256,7 +257,7 @@ function App() {
                         fill="#75b498"
                       />
                     </svg>
-                    <p className="text-black-300 text-[20px] text-start whitespace-nowrap">
+                    <p className="text-black-300 text-[14px] lg:text-[18px] text-start whitespace-nowrap">
                       ให้ความสำคัญกั
                       <span className="text-secondary-600">คุณภาพของงาน</span>
                       มากกว่าราคาที่ถูก
@@ -279,7 +280,7 @@ function App() {
                         fill="#75b498"
                       />
                     </svg>
-                    <p className="text-black-300 text-[20px] text-start whitespace-nowrap">
+                    <p className="text-black-300 text-[14px] lg:text-[18px] text-start whitespace-nowrap">
                       อยากได้ที่
                       <span className="text-secondary-600">
                         ปรึกษาที่รับฟัง
@@ -291,18 +292,25 @@ function App() {
                     </p>
                   </div>
                 </div>
-                <div className="flex w-full justify-center h-fit mt-5">
+
+                <div className="flex w-full justify-start lg:justify-center h-fit mt-5">
                   <a
-                    href="#service"
-                    className="flex w-[130px] h-[48px] bg-secondary-500 text-white justify-center items-center rounded-sm"
+                    href="#sponsor"
+                    className="flex w-[100px] h-[36px] lg:w-[130px] lg:h-[48px] bg-secondary-500 text-white justify-center items-center rounded-sm"
                   >
-                    <p className="font-light text-[16px]">บริการของเรา</p>
+                    <p className="font-light text-[14px] lg:text-[18px]">
+                      เกี่ยวกับเรา
+                    </p>
                   </a>
                 </div>
               </div>
               {/* woman prop */}
-              <div className="flex h-full w-fit justify-end">
-                <img src={carouselPropOne} alt="standingGirl" className="" />
+              <div className="relative flex flex-col h-full w-fit justify-end ">
+                <img
+                  src={carouselPropOne}
+                  alt="standingGirl"
+                  className="object-cover max-w-[140px] sm:min-w-[150px] sm:min-h-[250px] lg:min-w-[300px] lg:min-h-[400px] absolute bottom-0 left-52 sm:left-80 md:-right-32 lg:-right-0 md:left-0 lg:relative"
+                />
               </div>
             </div>
           </div>
