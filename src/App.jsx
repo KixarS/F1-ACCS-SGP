@@ -845,7 +845,7 @@ function App() {
             </div>
           </div>
           <div className="flex items-center flex-col w-full">
-            <div className="flex flex-row justify-center items-center xl:gap-20 gap-5 text-md text-primary-500 xl:text-lg xl:p-10 p-5 w-full">
+            <div className="flex flex-row justify-center items-center xl:gap-20 gap-5 text-sm text-primary-500 xl:text-lg xl:p-10 p-5 w-full">
               <a href="#">หน้าหลัก</a>
               <a href="#sponsor">เกี่ยวกับเรา</a>
               <a href="#service">บริการของเรา</a>
