@@ -52,7 +52,7 @@ export default {
       fontFamily: {
         sans: ['"Kanit"', ...defaultTheme.fontFamily.sans],
       },
-      plugins: [],
+      plugins: [require("tailwind-gradient-mask-image")],
     },
   },
 };

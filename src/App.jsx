@@ -6,6 +6,11 @@ import accsonlylogo from "/image/AccsOnlyLogo.png";
 import accsonlytext from "/image/AccsOnlyText.png";
 import linelogo from "/image/LineLogo.png";
 import GRLogo from "/image/GRLogo.png";
+import YadaLogo from "/image/Yada.png";
+import PrismaLogo from "/image/Prisma.png";
+import NuraLogo from "/image/Nura.png";
+import KanomLogo from "/image/Kanom.png";
+import HausLogo from "/image/1575.png";
 import googleMapIcon from "/image/GoogleMapIcon.png";
 import emailIcon from "/image/EmailIcon.png";
 import facebookIcon from "/image/FacebookLogo.png";
@@ -133,7 +138,7 @@ function App() {
           )}
           onClick={HamNavOpenHandle}
         >
-          <nav className=" flex flex-col items-start justify-end text-[24px] max-h-screen space-y-8 h-1/2 min-w-fit duration-300 font-medium text-[#75b498]">
+          <nav className=" flex flex-col items-start justify-end text-[24px] max-h-screen space-y-8 h-1/2 min-w-fit duration-300 font-medium mt-16 text-[#75b498]">
             <a
               href="#"
               className="flex flex-col relative h-10 items-center min-w-fit justify-center duration-300 lg:underline-button"
@@ -238,7 +243,7 @@ function App() {
                   บริการด้านบัญชีภาษี <br /> ดูแลธุรกิจครบวงจร
                 </p>
                 <p className="text-black-300 ml-1 text-[16px] sm:text-[20px] font-medium text-start mt-3">
-                  ถ้าหากคุณเป็นผู้ประกอบการที่
+                  ถ้าหากคุณเป็นผู้ประกอบการที่...
                 </p>
                 <div className="flex flex-col lg:ml-10 mt-2 space-y-1 w-full">
                   <div className="flex flex-row space-x-3 items-center">
@@ -282,7 +287,7 @@ function App() {
                       />
                     </svg>
                     <p className="text-black-300 text-[14px] lg:text-[18px] text-start whitespace-nowrap">
-                      ให้ความสำคัญกั
+                      ให้ความสำคัญกับ
                       <span className="text-secondary-600">คุณภาพของงาน</span>
                       มากกว่าราคาที่ถูก
                     </p>
@@ -320,7 +325,7 @@ function App() {
                 <div className="flex w-full justify-start lg:justify-center h-fit mt-5">
                   <a
                     href="#sponsor"
-                    className="flex w-[100px] h-[36px] lg:w-[130px] lg:h-[48px] bg-secondary-500 text-white justify-center items-center rounded-sm"
+                    className="duration-300 hover:scale-105 ease-in-out flex w-[100px] h-[36px] lg:w-[130px] lg:h-[45px] bg-secondary-500 text-white justify-center items-center rounded-sm"
                   >
                     <p className="font-light text-[14px] lg:text-[18px]">
                       เกี่ยวกับเรา
@@ -349,33 +354,55 @@ function App() {
         {/* Sponsor */}
         <section
           id="sponsor"
-          className="flex flex-col items-center pt-10 md:pt-0 justify-center bg-white h-[600px] w-full sm:pb-3 mx-auto"
+          className="flex flex-col items-center pt-10 md:pt-0 justify-center h-[600px] w-full sm:pb-3 mx-auto"
         >
           {/* Our Sponsor Head Text */}
-          <p className="flex text-primary-500 text-[30px] lg:text-[40px] font-semibold mb-4 select-none">
-            ที่ปรึกษาที่รู้ใจ
+          <p className="flex text-primary-500 text-[30px] lg:text-[40px] font-semibold mb-4 select-none text-center break-words">
+            ส่วนหนึ่งของบริษัทที่วางใจใช้บริการ Acclusive
           </p>
-          {/* Our Sponsor Logo */}
-          <img
-            src={GRLogo}
-            alt="gr-sponsor"
-            className="object-cover min-h-[175px] min-w-[175px] max-h-[175px] max-w-[175px] mt-3 cursor-pointer"
-          />
-          {/* Our Sponsor Text */}
-          <div className="w-full h-fit flex items-center justify-center flex-col">
-            <p className="font-bold text-secondary-500 text-[32px] my-4 cursor-pointer">
-              ยีราฟพารวย
-            </p>
-            <p className=" text-[20px] select-none  break-words text-center">
-              เป็น
-              <span className="text-primary-500 font-semibold">
-                ที่ปรึกษาด้านบัญชี
-              </span>
-              ที่ยีราฟไว้ใจ
-            </p>
-            <p className=" text-[20px] select-none  break-words text-center mx-10">
-              อีกทั้งยังเป็นผู้ช่วยที่ช่วยดูแลธุรกิจของยีราฟอีกด้วย
-            </p>
+          <div className="wrapper h-[300px] w-full mt-10 flex justify-center items-center">
+            <div className="item item1 flex justify-center max-w-fit min-w-fit max-h-fit min-h-fit ">
+              <img
+                src={GRLogo}
+                alt="grlogo"
+                className="object-cover min-w-[200px] max-w-[200px] min-h-[200px] max-h-[200px]"
+              />
+            </div>
+            <div className="item item2 flex justify-center max-w-fit min-w-fit max-h-fit min-h-fit">
+              <img
+                src={YadaLogo}
+                alt="youngdo"
+                className="object-cover min-w-[150px] max-w-[200px] min-h-[150px] max-h-[200px]"
+              />
+            </div>
+            <div className="item item3 flex justify-center max-w-fit min-w-fit max-h-fit min-h-fit">
+              <img
+                src={NuraLogo}
+                alt="nura"
+                className="object-cover min-w-[250px] max-w-[250px] min-h-[250px] max-h-[250px]"
+              />
+            </div>
+            <div className="item item4 flex justify-center max-w-fit min-w-fit max-h-fit min-h-fit">
+              <img
+                src={KanomLogo}
+                alt="kanom"
+                className="object-cover min-w-[200px] max-w-[200px] min-h-[200px] max-h-[200px]"
+              />
+            </div>
+            <div className="item item5 flex justify-center max-w-fit min-w-fit max-h-fit min-h-fit">
+              <img
+                src={PrismaLogo}
+                alt="pismo"
+                className="object-cover min-w-[200px] max-w-[200px] min-h-[200px] max-h-[200px]"
+              />
+            </div>
+            <div className="item item6 flex justify-center max-w-fit min-w-fit max-h-fit min-h-fit">
+              <img
+                src={HausLogo}
+                alt="haus"
+                className="object-cover min-w-[200px] max-w-[200px] min-h-[200px] max-h-[200px]"
+              />
+            </div>
           </div>
         </section>
         {/* Service */}
@@ -448,7 +475,7 @@ function App() {
           </p>
           <a
             href="#form"
-            className="flex bg-[#88AD9C] text-center text-white font-medium text-[21px] lg:text-[28px] px-10 py-4 rounded-sm"
+            className="flex bg-[#88AD9C] text-center text-white font-medium text-[21px] lg:text-[28px] px-10 py-4 rounded-sm duration-300 ease-in-out hover:scale-105"
           >
             ยินดีให้คำปรึกษา
           </a>
@@ -483,7 +510,7 @@ function App() {
             {/* Informations */}
             <div className="xl:flex hidden flex-col items-start w-full h-full space-y-8 pl-16">
               {/* location */}
-              <div className="flex flex-row gap-5 bg-white h-32 pl-4 w-[70%] rounded-r-full items-center justify-start opacity-85">
+              <div className="flex flex-row xl:gap-10 gap-5 bg-white h-36 xl:pl-20 pl-5 w-[70%] rounded-r-full items-center justify-start opacity-85">
                 {/* Google Map Icon */}
                 <img
                   src={googleMapIcon}
@@ -495,9 +522,11 @@ function App() {
                   <p className="text-xl font-bold text-primary-500">
                     ที่ตั้งสำนักงาน
                   </p>
-                  <p>บริษัทแอคคลูซีฟ จำกัด</p>
-                  <p>754/87 ซอย สุขุมวิท 101 แขวงบางจาก</p>
-                  <p>เขตพระโขนง กรุงเทพมหานคร 10260</p>
+                  <div>
+                    <p>บริษัท แอคคลูซีฟ จำกัด</p>
+                    <p>754/87 ซอย สุขุมวิท 101 แขวงบางจาก</p>
+                    <p>เขตพระโขนง กรุงเทพมหานคร 10260</p>
+                  </div>
                 </div>
               </div>
 
@@ -506,7 +535,7 @@ function App() {
                 onClick={() => {
                   handleEmailClick();
                 }}
-                className="flex cursor-pointer flex-row gap-5 bg-white h-32 pl-4 w-[70%] rounded-r-full items-center justify-start opacity-85"
+                className="flex cursor-pointer flex-row gap-5 xl:gap-10 bg-white  duration-300 ease-in-out from-white to-secondary-300 h-36 pl-5 xl:pl-20 w-[70%] rounded-r-full items-center justify-start opacity-85"
               >
                 {/* Email Icon */}
                 <img
@@ -524,7 +553,7 @@ function App() {
               </div>
 
               {/* Follow Infomation */}
-              <div className="flex flex-row gap-5 bg-white h-32 pl-4 w-[70%] rounded-r-full items-center justify-start opacity-85">
+              <div className="flex flex-row gap-5 xl:gap-10 bg-white h-36 pl-5 xl:pl-20 w-[70%] rounded-r-full items-center justify-start opacity-85">
                 {/* Follow Infomation Icon */}
                 <img
                   src={FollowInfomationIcon}
@@ -613,7 +642,9 @@ function App() {
                   <option value="option_3">
                     จดทะเบียนบริษัทจำกัด / ห้างหุ้นส่วนฯ
                   </option>
-                  <option value="option_4">บริการที่ปรึกษา และวางแผนภาษี</option>
+                  <option value="option_4">
+                    บริการที่ปรึกษา และวางแผนภาษี
+                  </option>
                 </select>
                 <textarea
                   className="p-2 outline outline-1 outline-gray-500 rounded-xl pl-4"
@@ -652,15 +683,7 @@ function App() {
           {/* InformationTab Mobile size */}
           <div className="flex xl:hidden items-center justify-center w-full h-20 z-20 mt-10 lg:px-64 md:px-48">
             <div className="flex items-center justify-center gap-5">
-              <div className="flex flex-col items-center space-y-2">
-                <img
-                  className="w-12 h-12 bg-white p-2 rounded-full"
-                  src={googleMapIcon}
-                  alt="google map icon"
-                />
-                <p className="text-primary-500 text-xs font-bold">ที่ตั้ง</p>
-              </div>
-
+              
               <div className="flex flex-col items-center space-y-2">
                 <img
                   className="w-12 h-12 bg-white rounded-full"
