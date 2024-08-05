@@ -6,18 +6,12 @@ import accsonlylogo from "/image/AccsOnlyLogo.png";
 import accsonlytext from "/image/AccsOnlyText.png";
 import ourservice from "/image/OurServiceBG.png";
 import linelogo from "/image/LineLogo.png";
-import GRLogo from "/image/GRLogo.png";
-import FormBG from "/image/FormBG.png";
-import YadaLogo from "/image/Yada.png";
-import PrismaLogo from "/image/Prisma.png";
-import NuraLogo from "/image/Nura.png";
-import KanomLogo from "/image/Kanom.png";
-import HausLogo from "/image/1575.png";
 import googleMapIcon from "/image/GoogleMapIcon.png";
 import emailIcon from "/image/EmailIcon.png";
 import facebookIcon from "/image/FacebookLogo.png";
 import lineIcon from "/image/LineIcon.png";
 import XIcon from "/image/XLogo.png";
+import FormBG from "/image/FormBG.png";
 import PictureLine from "/image/PictureLine.png";
 import Facebook from "/image/Facebook.png";
 import FollowInfomationIcon from "/image/FollowInfomationIcon.png";
@@ -26,6 +20,7 @@ import clsx from "clsx";
 import SharePopup from "./components/SharePopup";
 import Loading from "./components/Loading";
 import Swal from "sweetalert2";
+import SponsorGrid from "./components/SponsorGrid";
 
 function App() {
   const [HamNavOpen, setHamNavOpen] = useState(false);
@@ -421,56 +416,14 @@ function App() {
         {/* Sponsor */}
         <section
           id="sponsor"
-          className="flex flex-col items-center pt-10 md:pt-0 justify-center h-[600px] w-full sm:pb-3 mx-auto relative"
+          className="flex flex-col items-center pt-10 justify-center h-fit pb-10 w-full mx-auto relative"
         >
           {/* Our Sponsor Head Text */}
           <p className="flex text-primary-500 text-[30px] lg:text-[40px] font-semibold mb-4 select-none text-center break-words">
             ส่วนหนึ่งของบริษัทที่วางใจใช้บริการ Acclusive
           </p>
-          <div className="wrapper h-[300px] w-full mt-10 flex justify-center items-center">
-            <div className="item item1 flex justify-center max-w-fit min-w-fit max-h-fit min-h-fit ">
-              <img
-                src={GRLogo}
-                alt="grlogo"
-                className="object-cover min-w-[200px] max-w-[200px] min-h-[200px] max-h-[200px]"
-              />
-            </div>
-            <div className="item item2 flex justify-center max-w-fit min-w-fit max-h-fit min-h-fit">
-              <img
-                src={YadaLogo}
-                alt="youngdo"
-                className="object-cover min-w-[150px] max-w-[200px] min-h-[150px] max-h-[200px]"
-              />
-            </div>
-            <div className="item item3 flex justify-center max-w-fit min-w-fit max-h-fit min-h-fit">
-              <img
-                src={NuraLogo}
-                alt="nura"
-                className="object-cover min-w-[250px] max-w-[250px] min-h-[250px] max-h-[250px]"
-              />
-            </div>
-            <div className="item item4 flex justify-center max-w-fit min-w-fit max-h-fit min-h-fit">
-              <img
-                src={KanomLogo}
-                alt="kanom"
-                className="object-cover min-w-[200px] max-w-[200px] min-h-[200px] max-h-[200px]"
-              />
-            </div>
-            <div className="item item5 flex justify-center max-w-fit min-w-fit max-h-fit min-h-fit">
-              <img
-                src={PrismaLogo}
-                alt="pismo"
-                className="object-cover min-w-[200px] max-w-[200px] min-h-[200px] max-h-[200px]"
-              />
-            </div>
-            <div className="item item6 flex justify-center max-w-fit min-w-fit max-h-fit min-h-fit">
-              <img
-                src={HausLogo}
-                alt="haus"
-                className="object-cover min-w-[200px] max-w-[200px] min-h-[200px] max-h-[200px]"
-              />
-            </div>
-          </div>
+        {/* <SponsorSlide /> */}
+        <SponsorGrid />
         </section>
         {/* Service */}
         <section
