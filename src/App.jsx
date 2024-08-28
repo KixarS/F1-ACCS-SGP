@@ -886,7 +886,7 @@ function App() {
       </section>
       <button
         className={clsx(
-          "fixed right-2 bottom-0 transition-all z-50 duration-75 flex justify-end bg-secondary-100 p-2 rounded-xl h-fit w-fit select-none",
+          "fixed right-2 bottom-0 transition-all z-0 duration-75 flex justify-end bg-secondary-100 p-2 rounded-xl h-fit w-fit select-none",
           isAtBottom ? "bottom-20" : "bottom-2"
         )}
       >
