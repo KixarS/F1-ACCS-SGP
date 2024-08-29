@@ -1,11 +1,16 @@
 import "./App.css";
 import navlogo from "/image/AccsLogo.png";
 import carouselBG from "/image/CarouselBG.png";
+import recommendBG from "/image/RecommendBG.jpg";
 import carouselPropOne from "/image/CarouselPropOne.png";
 import accsonlylogo from "/image/AccsOnlyLogo.png";
 import accsonlytext from "/image/AccsOnlyText.png";
 import ourservice from "/image/OurServiceBG.png";
 import linelogo from "/image/LineLogo.png";
+import example from "/image/Example.jpg";
+import example2 from "/image/Example2.jpg";
+import example3 from "/image/Example3.jpg";
+import example4 from "/image/Example4.jpg";
 import googleMapIcon from "/image/GoogleMapIcon.png";
 import emailIcon from "/image/EmailIcon.png";
 import facebookIcon from "/image/FacebookLogo.png";
@@ -21,6 +26,7 @@ import SharePopup from "./components/SharePopup";
 import Loading from "./components/Loading";
 import Swal from "sweetalert2";
 import SponsorGrid from "./components/SponsorGrid";
+import "flowbite";
 
 function App() {
   const [HamNavOpen, setHamNavOpen] = useState(false);
@@ -416,14 +422,208 @@ function App() {
         {/* Sponsor */}
         <section
           id="sponsor"
-          className="flex flex-col items-center pt-10 justify-center h-fit pb-10 w-full mx-auto relative"
+          className="flex flex-col items-center pt-28 justify-center h-fit pb-10 w-full mx-auto relative"
         >
           {/* Our Sponsor Head Text */}
           <p className="flex text-primary-500 text-[30px] lg:text-[40px] font-semibold mb-4 select-none text-center break-words">
             ส่วนหนึ่งของบริษัทที่วางใจใช้บริการ Acclusive
           </p>
-        {/* <SponsorSlide /> */}
-        <SponsorGrid />
+          {/* <SponsorSlide /> */}
+          <SponsorGrid />
+        </section>
+        <section className="flex w-full h-[700px] flex-row">
+          <div className="my-10 w-full max-h-full flex relative flex-col lg:flex-row items-center justify-center overflow-hidden">
+            <div className="flex flex-col">
+              <div className="flex z-10 h-fit flex-col w-fit md:w-[500px] text-[30px] lg:text-[40px] select-none">
+                <p className="w-full justify-center md:justify-start text-secondary-500 font-medium brightness-110">
+                  เคยเจอปัญหาแบบนี้ไหม?
+                </p>
+                <p className="w-full justify-center md:justify-end flex font-semibold text-primary-500">
+                  แค่เลือกผิดชีวิตเปลี่ยน..
+                </p>
+              </div>
+              <div className="flex">
+                <div
+                  id="indicators-carousel"
+                  className="relative w-full"
+                  data-carousel="static"
+                >
+                  <div className="relative h-56 overflow-hidden rounded-lg md:h-72">
+                    <div
+                      className="hidden duration-700 ease-in-out"
+                      data-carousel-item="active"
+                    >
+                      <img
+                        src={example}
+                        className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                        alt="..."
+                      />
+                    </div>
+                    <div
+                      className="hidden duration-700 ease-in-out"
+                      data-carousel-item
+                    >
+                      <img
+                        src={example2}
+                        className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                        alt="..."
+                      />
+                    </div>
+                    <div
+                      className="hidden duration-700 ease-in-out"
+                      data-carousel-item
+                    >
+                      <img
+                        src={example3}
+                        className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                        alt="..."
+                      />
+                    </div>
+                    <div
+                      className="hidden duration-700 ease-in-out"
+                      data-carousel-item
+                    >
+                      <img
+                        src={example4}
+                        className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 scale-90"
+                        alt="..."
+                      />
+                    </div>
+                  </div>
+                  {/* bullet Button */}
+                  <div className="absolute z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse -bottom-10 left-1/2">
+                    <button
+                      type="button"
+                      className="w-3 h-3 rounded-full"
+                      aria-current="true"
+                      aria-label="Slide 1"
+                      data-carousel-slide-to="0"
+                    ></button>
+                    <button
+                      type="button"
+                      className="w-3 h-3 rounded-full"
+                      aria-current="false"
+                      aria-label="Slide 2"
+                      data-carousel-slide-to="1"
+                    ></button>
+                    <button
+                      type="button"
+                      className="w-3 h-3 rounded-full"
+                      aria-current="false"
+                      aria-label="Slide 3"
+                      data-carousel-slide-to="2"
+                    ></button>
+                    <button
+                      type="button"
+                      className="w-3 h-3 rounded-full"
+                      aria-current="false"
+                      aria-label="Slide 4"
+                      data-carousel-slide-to="3"
+                    ></button>
+                  </div>
+                  <button
+                    type="button"
+                    className="absolute top-0 -start-16 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                    data-carousel-prev
+                  >
+                    <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                      <svg
+                        className="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 6 10"
+                      >
+                        <path
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M5 1 1 5l4 4"
+                        />
+                      </svg>
+                      <span className="sr-only">Previous</span>
+                    </span>
+                  </button>
+                  <button
+                    type="button"
+                    className="absolute top-0 -end-16 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                    data-carousel-next
+                  >
+                    <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                      <svg
+                        className="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 6 10"
+                      >
+                        <path
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="m1 9 4-4-4-4"
+                        />
+                      </svg>
+                      <span className="sr-only">Next</span>
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div className="flex flex-col z-10 ml-20 h-fit justify-end text-black-500 md:text-[20px] md:w-[670px] space-y-10 mt-16">
+              <p className="break-words select-none flex flex-row space-x-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="#60947d"
+                  className="w-7 h-7 mt-1"
+                >
+                  <path d="M4.913 2.658c2.075-.27 4.19-.408 6.337-.408 2.147 0 4.262.139 6.337.408 1.922.25 3.291 1.861 3.405 3.727a4.403 4.403 0 0 0-1.032-.211 50.89 50.89 0 0 0-8.42 0c-2.358.196-4.04 2.19-4.04 4.434v4.286a4.47 4.47 0 0 0 2.433 3.984L7.28 21.53A.75.75 0 0 1 6 21v-4.03a48.527 48.527 0 0 1-1.087-.128C2.905 16.58 1.5 14.833 1.5 12.862V6.638c0-1.97 1.405-3.718 3.413-3.979Z" />
+                  <path d="M15.75 7.5c-1.376 0-2.739.057-4.086.169C10.124 7.797 9 9.103 9 10.609v4.285c0 1.507 1.128 2.814 2.67 2.94 1.243.102 2.5.157 3.768.165l2.782 2.781a.75.75 0 0 0 1.28-.53v-2.39l.33-.026c1.542-.125 2.67-1.433 2.67-2.94v-4.286c0-1.505-1.125-2.811-2.664-2.94A49.392 49.392 0 0 0 15.75 7.5Z" />
+                </svg>
+                <p>
+                  หลายคนที่เคย
+                  <span className="text-secondary-500">
+                    เจอประสบการณ์เลวร้าย
+                  </span>
+                  กับสำนักงานบัญชีที่ขาดความรับผิดชอบ
+                  <br />
+                  อาจทำให้คุณต้องเสียค่าปรับภาษีเป็นจำนวนมาก
+                </p>
+              </p>
+              <p className="break-words select-none flex flex-row space-x-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="#60947d"
+                  className="w-7 h-7 mt-1"
+                >
+                  <path d="M4.913 2.658c2.075-.27 4.19-.408 6.337-.408 2.147 0 4.262.139 6.337.408 1.922.25 3.291 1.861 3.405 3.727a4.403 4.403 0 0 0-1.032-.211 50.89 50.89 0 0 0-8.42 0c-2.358.196-4.04 2.19-4.04 4.434v4.286a4.47 4.47 0 0 0 2.433 3.984L7.28 21.53A.75.75 0 0 1 6 21v-4.03a48.527 48.527 0 0 1-1.087-.128C2.905 16.58 1.5 14.833 1.5 12.862V6.638c0-1.97 1.405-3.718 3.413-3.979Z" />
+                  <path d="M15.75 7.5c-1.376 0-2.739.057-4.086.169C10.124 7.797 9 9.103 9 10.609v4.285c0 1.507 1.128 2.814 2.67 2.94 1.243.102 2.5.157 3.768.165l2.782 2.781a.75.75 0 0 0 1.28-.53v-2.39l.33-.026c1.542-.125 2.67-1.433 2.67-2.94v-4.286c0-1.505-1.125-2.811-2.664-2.94A49.392 49.392 0 0 0 15.75 7.5Z" />
+                </svg>
+                <p>
+                  อย่าเสี่ยงกับความเสียหายที่แก้ไขไม่ได้
+                  ให้เราช่วยดูแลบัญชีของคุณ
+                  <br />
+                  ด้วยทีมงานมืออาชีพที่คุณวางใจได้
+                  <span className="text-secondary-500">
+                    {" "}
+                    ติดต่อเราวันนี้เพื่อรับคำปรึกษาเบื้องต้นฟรี!
+                  </span>
+                </p>
+              </p>
+            </div>
+            {/* Background */}
+            <img
+              src={recommendBG}
+              alt="recommendBG"
+              className="object-cover w-full h-full absolute right-0 bottom-0 brightness-75 blur-[2px]"
+            />
+
+            <div className="gray-overlay absolute md:inset-0 xl:inset-10 bg-[#FFFFFF] opacity-90 " />
+          </div>
         </section>
         {/* Service */}
         <section
@@ -886,7 +1086,7 @@ function App() {
       </section>
       <button
         className={clsx(
-          "fixed right-2 bottom-0 transition-all z-0 duration-75 flex justify-end bg-secondary-100 p-2 rounded-xl h-fit w-fit select-none",
+          "fixed right-2 bottom-0 transition-all z-20 duration-75 flex justify-end bg-secondary-100 p-2 rounded-xl h-fit w-fit select-none",
           isAtBottom ? "bottom-20" : "bottom-2"
         )}
       >
