@@ -442,7 +442,7 @@ function App() {
                   แค่เลือกผิดชีวิตเปลี่ยน..
                 </p>
               </div>
-              <div className="flex xl:mt-10">
+              <div className="flex mt-10">
                 <div
                   id="indicators-carousel"
                   className="relative w-full"
