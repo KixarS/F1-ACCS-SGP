@@ -431,24 +431,24 @@ function App() {
           {/* <SponsorSlide /> */}
           <SponsorGrid />
         </section>
-        <section className="flex w-full h-[700px] flex-row">
-          <div className="my-10 w-full max-h-full flex relative flex-col lg:flex-row items-center justify-center overflow-hidden">
+        <section className="flex w-full h-[750px] xl:h-[750px] flex-row ">
+          <div className=" w-full flex relative flex-col xl:flex-row items-center justify-center overflow-hidden">
             <div className="flex flex-col">
-              <div className="flex z-10 h-fit flex-col w-fit md:w-[500px] text-[30px] lg:text-[40px] select-none">
-                <p className="w-full justify-center md:justify-start text-secondary-500 font-medium brightness-110">
+              <div className="flex z-10 h-fit flex-col w-fit md:w-[500px] text-[30px] lg:text-[30px] xl:text-[40px] select-none">
+                <p className="w-full text-center xl:justify-start text-secondary-500 font-medium brightness-110">
                   เคยเจอปัญหาแบบนี้ไหม?
                 </p>
-                <p className="w-full justify-center md:justify-end flex font-semibold text-primary-500">
+                <p className="w-full justify-center xl:justify-end flex font-semibold text-primary-500">
                   แค่เลือกผิดชีวิตเปลี่ยน..
                 </p>
               </div>
-              <div className="flex">
+              <div className="flex xl:mt-10">
                 <div
                   id="indicators-carousel"
                   className="relative w-full"
                   data-carousel="static"
                 >
-                  <div className="relative h-56 overflow-hidden rounded-lg md:h-72">
+                  <div className="relative w-full h-52 overflow-hidden rounded-lg">
                     <div
                       className="hidden duration-700 ease-in-out"
                       data-carousel-item="active"
@@ -572,7 +572,8 @@ function App() {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col z-10 ml-20 h-fit justify-end text-black-500 md:text-[20px] md:w-[670px] space-y-10 mt-16">
+            {/* Text */}
+            <div className="flex flex-col z-10 xl:ml-24 h-fit justify-end text-black-500 md:text-[20px] md:w-[670px] space-y-10 mt-16">
               <p className="break-words select-none flex flex-row space-x-3">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -622,7 +623,7 @@ function App() {
               className="object-cover w-full h-full absolute right-0 bottom-0 brightness-75 blur-[2px]"
             />
 
-            <div className="gray-overlay absolute md:inset-0 xl:inset-10 bg-[#FFFFFF] opacity-90 " />
+            <div className="gray-overlay absolute inset-0 xl:inset-10 bg-[#FFFFFF] opacity-90 " />
           </div>
         </section>
         {/* Service */}
