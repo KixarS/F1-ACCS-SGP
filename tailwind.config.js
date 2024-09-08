@@ -6,6 +6,7 @@ export default {
   content: [
     "./index.html", 
     "./src/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/flowbite/**/*.js"
   ],
 
   theme: {
@@ -52,7 +53,7 @@ export default {
       fontFamily: {
         sans: ['"Kanit"', ...defaultTheme.fontFamily.sans],
       },
-      plugins: [require("tailwind-gradient-mask-image")],
+      plugins: [require("flowbite/plugin")],
     },
   },
 };
