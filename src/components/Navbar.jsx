@@ -30,9 +30,9 @@ function Navbar() {
             <a href="#" className="flex relative h-full items-center min-w-fit justify-center duration-300 underline-button active">
               หน้าหลัก
             </a>
-            <a href="#sponsor" className="flex relative h-full items-center min-w-fit justify-center duration-300 underline-button">
+            {/* <a href="#sponsor" className="flex relative h-full items-center min-w-fit justify-center duration-300 underline-button">
               ลูกค้าของเรา
-            </a>
+            </a> */}
             <a href="#service" className="flex relative h-full items-center min-w-fit justify-center duration-300 underline-button">
               บริการของเรา
             </a>
@@ -71,7 +71,7 @@ function Navbar() {
               <p className="flex h-[40px] flex-row justify-start items-end">หน้าหลัก</p>
             </div>
           </a>
-          <a href="#sponsor" className="flex relative h-10 items-center min-w-fit justify-center duration-300 lg:underline-button">
+          {/* <a href="#sponsor" className="flex relative h-10 items-center min-w-fit justify-center duration-300 lg:underline-button">
             <div className="flex flex-row justify-start items-start space-x-5">
               <div className="flex justify-center items-center">
                 <svg className="w-10 h-10 mt-1" viewBox="5 0 60 60" xmlns="http://www.w3.org/2000/svg" fill="#03474B">
@@ -80,7 +80,7 @@ function Navbar() {
               </div>
               <div className="flex h-[40px] flex-row justify-start items-end">พาร์ทเนอร์</div>
             </div>
-          </a>
+          </a> */}
           <a href="#service" className="flex relative h-fit items-center min-w-fit justify-center duration-300 lg:underline-button">
             <div className="flex flex-row justify-start items-start space-x-5">
               <div className="flex justify-center items-center h-full">
