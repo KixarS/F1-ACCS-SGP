@@ -1,10 +1,10 @@
-import ourservice from "/image/OurServiceBG.png";
+import ourservice from "../../public/image/OurServiceBG.png";
 
 const services = [
-  { img: "../image/FirstServiceLogo.png", alt: "firstservice", label: "รับทำบัญชีรายเดือน \n และยื่นภาษี" },
-  { img: "../image/SecondServiceLogo.png", alt: "secondservice", label: "บริการตรวจสอบ \n รับรองบัญชี" },
-  { img: "../image/ThirdServiceLogo.png", alt: "thirdservice", label: "จดทะเบียนบริษัทจำกัด \n / ห้างหุ้นส่วนฯ" },
-  { img: "../image/FourthServiceLogo.png", alt: "fourthservice", label: "บริการที่ปรึกษา \n และวางแผนภาษี" },
+  { img: "../../public/image/FirstServiceLogo.png", alt: "firstservice", label: "รับทำบัญชีรายเดือน \n และยื่นภาษี" },
+  { img: "../../public/image/SecondServiceLogo.png", alt: "secondservice", label: "บริการตรวจสอบ \n รับรองบัญชี" },
+  { img: "../../public/image/ThirdServiceLogo.png", alt: "thirdservice", label: "จดทะเบียนบริษัทจำกัด \n / ห้างหุ้นส่วนฯ" },
+  { img: "../../public/image/FourthServiceLogo.png", alt: "fourthservice", label: "บริการที่ปรึกษา \n และวางแผนภาษี" },
 ];
 
 function ServiceSection() {

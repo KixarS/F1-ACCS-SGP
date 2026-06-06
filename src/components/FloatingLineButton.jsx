@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import clsx from "clsx";
-import linelogo from "/image/LineLogo.png";
+import linelogo from "../../public/image/LineLogo.png";
 
 function FloatingLineButton() {
   const [isAtBottom, setIsAtBottom] = useState(false);
