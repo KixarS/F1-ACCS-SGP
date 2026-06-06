@@ -1,6 +1,6 @@
-import navlogo from "../../public/image/AccsLogo.png";
-import carouselBG from "../../public/image/CarouselBG.png";
-import carouselPropOne from "../../public/image/CarouselPropOne.png";
+import navlogo from "/image/AccsLogo.png";
+import carouselBG from "/image/CarouselBG.png";
+import carouselPropOne from "/image/CarouselPropOne.png";
 
 function HeroSection() {
   return (

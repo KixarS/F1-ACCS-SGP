@@ -3,13 +3,13 @@ import clsx from "clsx";
 import Swal from "sweetalert2";
 import Loading from "./Loading";
 import SharePopup from "./SharePopup";
-import FormBG from "../../public/image/FormBG.png";
-import googleMapIcon from "../../public/image/GoogleMapIcon.png";
-import emailIcon from "../../public/image/EmailIcon.png";
-import facebookIcon from "../../public/image/FacebookLogo.png";
-import lineIcon from "../../public/image/LineIcon.png";
-import XIcon from "../../public/image/XLogo.png";
-import FollowInfomationIcon from "../../public/image/FollowInfomationIcon.png";
+import FormBG from "/image/FormBG.png";
+import googleMapIcon from "/image/GoogleMapIcon.png";
+import emailIcon from "/image/EmailIcon.png";
+import facebookIcon from "/image/FacebookLogo.png";
+import lineIcon from "/image/LineIcon.png";
+import XIcon from "/image/XLogo.png";
+import FollowInfomationIcon from "/image/FollowInfomationIcon.png";
 
 function ContactSection() {
   const [showLoad, setShowLoad] = useState(false);

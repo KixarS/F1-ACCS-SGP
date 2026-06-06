@@ -1,8 +1,8 @@
-import recommendBG from "../../public/image/RecommendBG.jpg";
-import example from "../../public/image/Example.jpg";
-import example2 from "../../public/image/Example2.jpg";
-import example3 from "../../public/image/Example3.jpg";
-import example4 from "../../public/image/Example4.jpg";
+import recommendBG from "/image/RecommendBG.jpg";
+import example from "/image/Example.jpg";
+import example2 from "/image/Example2.jpg";
+import example3 from "/image/Example3.jpg";
+import example4 from "/image/Example4.jpg";
 
 const ChatIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#60947d" className="w-7 h-7 mt-1">

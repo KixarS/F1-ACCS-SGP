@@ -1,8 +1,8 @@
-import accsonlylogo from "../../public/image/AccsOnlyLogo.png";
-import accsonlytext from "../../public/image/AccsOnlyText.png";
-import PictureLine from "../../public/image/PictureLine.png";
-import linelogo from "../../public/image/LineLogo.png";
-import Facebook from "../../public/image/Facebook.png";
+import accsonlylogo from "/image/AccsOnlyLogo.png";
+import accsonlytext from "/image/AccsOnlyText.png";
+import PictureLine from "/image/PictureLine.png";
+import linelogo from "/image/LineLogo.png";
+import Facebook from "/image/Facebook.png";
 
 function Footer() {
   return (
