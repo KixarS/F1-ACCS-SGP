@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import recommendBG from "/image/RecommendBG.jpg";
 import example from "/image/Example.jpg";
 import example2 from "/image/Example2.jpg";
@@ -11,7 +12,26 @@ const ChatIcon = () => (
   </svg>
 );
 
+const images = [example, example2, example3, example4];
+
 function ProblemSection() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  };
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  };
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section className="flex w-full h-[750px] xl:h-[750px] flex-row">
       <div className="w-full flex relative flex-col xl:flex-row items-center justify-center overflow-hidden">
@@ -25,41 +45,49 @@ function ProblemSection() {
             </p>
           </div>
           <div className="flex mt-10">
-            <div id="indicators-carousel" className="relative w-full" data-carousel="static">
+            <div id="indicators-carousel" className="relative w-full">
               <div className="relative w-full h-52 overflow-hidden rounded-lg">
-                <div className="hidden duration-700 ease-in-out" data-carousel-item="active">
-                  <img src={example} className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
-                </div>
-                <div className="hidden duration-700 ease-in-out" data-carousel-item>
-                  <img src={example2} className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
-                </div>
-                <div className="hidden duration-700 ease-in-out" data-carousel-item>
-                  <img src={example3} className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
-                </div>
-                <div className="hidden duration-700 ease-in-out" data-carousel-item>
-                  <img src={example4} className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 scale-90" alt="..." />
-                </div>
+                {images.map((img, i) => (
+                  <div
+                    key={i}
+                    className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+                      i === currentIndex ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
+                    }`}
+                  >
+                    <img
+                      src={img}
+                      className={`absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 ${
+                        i === 3 ? "scale-90" : ""
+                      }`}
+                      alt={`Slide ${i + 1}`}
+                    />
+                  </div>
+                ))}
               </div>
               {/* Bullet buttons */}
               <div className="absolute z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse -bottom-10 left-1/2">
-                {[0, 1, 2, 3].map((i) => (
+                {images.map((_, i) => (
                   <button
                     key={i}
                     type="button"
-                    className="w-3 h-3 rounded-full"
-                    aria-current={i === 0 ? "true" : "false"}
+                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                      i === currentIndex
+                        ? "bg-primary-500 scale-125"
+                        : "bg-gray-300 hover:bg-gray-400"
+                    }`}
+                    onClick={() => setCurrentIndex(i)}
+                    aria-current={i === currentIndex ? "true" : "false"}
                     aria-label={`Slide ${i + 1}`}
-                    data-carousel-slide-to={i}
                   />
                 ))}
               </div>
               <button
                 type="button"
                 className="absolute top-0 -start-16 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-                data-carousel-prev
+                onClick={prevSlide}
               >
-                <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                  <svg className="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-black-500/10 hover:bg-black-500/20 group-hover:bg-black-500/20 group-focus:ring-4 group-focus:ring-primary-500/30 transition-all duration-300">
+                  <svg className="w-4 h-4 text-primary-500 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                     <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 1 1 5l4 4" />
                   </svg>
                   <span className="sr-only">Previous</span>
@@ -68,10 +96,10 @@ function ProblemSection() {
               <button
                 type="button"
                 className="absolute top-0 -end-16 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-                data-carousel-next
+                onClick={nextSlide}
               >
-                <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                  <svg className="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-black-500/10 hover:bg-black-500/20 group-hover:bg-black-500/20 group-focus:ring-4 group-focus:ring-primary-500/30 transition-all duration-300">
+                  <svg className="w-4 h-4 text-primary-500 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                     <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 9 4-4-4-4" />
                   </svg>
                   <span className="sr-only">Next</span>
